@@ -1,4 +1,4 @@
-name: DREAM Observatory
+name: World Scan
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  snapshot:
+  scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install numpy scipy
-      - name: Fetch world snapshot
+      - name: Fetch world data
         run: python scripts/world_fetch.py
       - name: Commit if changed
         run: |
