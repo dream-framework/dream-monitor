@@ -111,21 +111,28 @@ if d:
     print(f'  ok {len(quakes)}')
 else:snap['feeds']['earthquakes']={'name':'Earthquakes','status':'failed'}
 
-# 2 NOAA solar wind — fix URL
-print('NOAA...')
-d=fetch('https://services.swpc.noaa.gov/products/summary/solar-wind-speed.json',timeout=30)
-if not d:d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json',timeout=30)
+# 2 NOAA space weather — Kp index + solar flux
+print('NOAA Kp...')
+d=fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json',timeout=30)
 if d:
     try:
         j=json.loads(d)
-        if 'data' in j:
-            speeds=[float(r[1]) for r in j['data'] if r[1] and float(r[1])>0]
-        else:
-            speeds=[float(r[1]) for r in j[1:] if r[1] and float(r[1])>0]
-        snap['feeds']['solar_wind']={'name':'Solar Wind','category':'space','status':'ok','current':speeds[-1]if speeds else 0,'unit':'km/s','count':len(speeds),'sparkline':spark(speeds),'dream':dream_analysis(speeds)}
-        print(f'  ok {len(speeds)}')
-    except:snap['feeds']['solar_wind']={'name':'Solar Wind','status':'failed'}
-else:snap['feeds']['solar_wind']={'name':'Solar Wind','status':'failed'}
+        kp_vals=[float(r['Kp']) for r in j if 'Kp' in r]
+        snap['feeds']['space_weather']={'name':'Space Weather (Kp)','category':'space','status':'ok','current':kp_vals[-1] if kp_vals else 0,'unit':'Kp','count':len(kp_vals),'sparkline':spark(kp_vals),'dream':dream_analysis(kp_vals)}
+        print(f'  ok {len(kp_vals)} Kp points')
+    except as e:print(f'    err:{e}');snap['feeds']['space_weather']={'name':'Space Weather','status':'failed'}
+else:snap['feeds']['space_weather']={'name':'Space Weather','status':'failed'}
+
+print('NOAA Solar Flux...')
+d=fetch('https://services.swpc.noaa.gov/products/10cm-flux-30-day.json',timeout=30)
+if d:
+    try:
+        j=json.loads(d)
+        flux_vals=[float(r['flux']) for r in j if 'flux' in r]
+        snap['feeds']['solar_flux']={'name':'Solar Flux (F10.7)','category':'space','status':'ok','current':flux_vals[-1] if flux_vals else 0,'unit':'sfu','count':len(flux_vals),'sparkline':spark(flux_vals),'dream':dream_analysis(flux_vals)}
+        print(f'  ok {len(flux_vals)} flux points')
+    except:snap['feeds']['solar_flux']={'name':'Solar Flux','status':'failed'}
+else:snap['feeds']['solar_flux']={'name':'Solar Flux','status':'failed'}
 
 # 3 Yahoo Finance markets — PROVEN TO WORK
 print('Yahoo Finance...')
