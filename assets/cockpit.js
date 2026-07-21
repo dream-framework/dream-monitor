@@ -1,5 +1,5 @@
 const URL='data/derived/world_snapshot.json';
-let dreamOn=false; let snap=null;
+let dreamOn=false; let snap=null; let charts={};
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const fmt=(v,d=2)=>v===null||v===undefined?'—':Number(v).toFixed(d);
 const ago=ts=>{if(!ts)return'—';const s=Math.round((Date.now()-new Date(ts))/1000);return s<60?s+'s':s<3600?Math.round(s/60)+'m':Math.round(s/3600)+'h';};
@@ -11,52 +11,71 @@ function spark(vals,color='#22d3ee'){
   return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5"/></svg>`;
 }
 
-function dreamGraph(d){
+function dreamGraph(d, feedName){
   if(!d||!d.retention_curve||!d.retention_curve.length)return'';
-  const w=200,h=70,pad=6;
+  const w=240,h=90,pad=8;
   const acf=d.retention_curve;
   const fit=d.fit_curve||[];
-  const maxT=acf.length;
-  const x=i=>pad+(i/(maxT-1))*(w-2*pad);
-  const y=v=>h-pad-v*(h-2*pad);
-  let acfPts=acf.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
-  let fitPts='';
-  if(fit.length){
-    const fitStep=(maxT-1)/(fit.length-1);
-    fitPts=fit.map((v,i)=>`${x(i*fitStep)},${y(v)}`).join(' ');
-  }
+  const n=acf.length;
+  const x=i=>pad+(i/(n-1))*(w-2*pad);
+  const y=v=>h-pad-Math.max(0,Math.min(1,v))*(h-2*pad);
   const color=d.regime==='EXTRACTION'?'#f87171':d.regime==='NATURAL'?'#4ade80':'#fbbf24';
-  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
-    <line x1="0" y1="${h/2}" x2="${w}" y2="${h/2}" stroke="#1a2238" stroke-width="0.5" stroke-dasharray="2"/>
-    <polyline points="${acfPts}" fill="none" stroke="${color}" stroke-width="1" opacity="0.5"/>
-    ${fitPts?`<polyline points="${fitPts}" fill="none" stroke="${color}" stroke-width="2"/>`:''}
-  </svg>`;
+  
+  // ACF points as circles + line
+  let acfPts=acf.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
+  let acfDots=acf.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="1.5" fill="${color}" opacity="0.6"/>`).join('');
+  
+  // S2 fit curve
+  let fitPath='';
+  if(fit.length){
+    const fitStep=(n-1)/(fit.length-1);
+    fitPath=`<polyline points="${fit.map((v,i)=>`${x(i*fitStep)},${y(v)}`).join(' ')}" fill="none" stroke="${color}" stroke-width="2.5" opacity="0.9"/>`;
+  }
+  
+  // Labels
+  const D=d.D.toFixed(3);
+  const regimeColor=color;
+  const narrate = d.regime==='EXTRACTION' 
+    ? `D=${D} > 1: extraction regime — retention collapses super-exponentially`
+    : d.regime==='NATURAL' 
+    ? `D=${D} < 0.8: natural regime — slow, heavy-tailed decay`
+    : `D=${D} ≈ 1: threshold zone — phase transition`;
+  
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:90px" preserveAspectRatio="none">
+    <!-- grid -->
+    <line x1="0" y1="${h/2}" x2="${w}" y2="${h/2}" stroke="#1a2238" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <!-- ACF data -->
+    <polyline points="${acfPts}" fill="none" stroke="${color}" stroke-width="1" opacity="0.4"/>
+    ${acfDots}
+    <!-- S2 fit -->
+    ${fitPath}
+    <!-- D label -->
+    <text x="${pad}" y="${pad+4}" fill="${regimeColor}" font-size="11" font-family="monospace" font-weight="700">D=${D}</text>
+    <text x="${pad}" y="${pad+16}" fill="#5a6783" font-size="8" font-family="sans-serif">${d.regime}</text>
+    <!-- R² label -->
+    <text x="${w-pad-40}" y="${pad+4}" fill="#5a6783" font-size="9" font-family="monospace" text-anchor="end">R²=${d.r2.toFixed(3)}</text>
+    <!-- axis labels -->
+    <text x="${pad}" y="${h-2}" fill="#3d4a63" font-size="7">lag→</text>
+    <text x="2" y="${pad+4}" fill="#3d4a63" font-size="7">R(t)</text>
+  </svg>
+  <div style="font-size:9px;color:var(--m2);padding:2px 4px;background:var(--bg);border-radius:3px;margin-top:2px">${esc(narrate)}</div>`;
 }
 
-function dreamBlock(dream){
+function dreamBlock(dream, feedName){
   if(!dream)return'';
   const d=dream;
   const cls=d.regime==='EXTRACTION'?'ext':d.regime==='NATURAL'?'nat':'thr';
   const vcls=d.verdict==='S2_WINS'?'win':d.verdict==='S2_TIES'?'tie':'lose';
   const ma=d.model_aicc||{};
-  const s2cls=ma.S2&&(!ma.EXP||ma.S2<ma.EXP)&&(!ma.POWER||ma.S2<ma.POWER)?'win':'';
-  const expcls=ma.EXP&&ma.EXP<ma.S2?'lose':'';
-  const powcls=ma.POWER&&ma.POWER<ma.S2?'lose':'';
   return `<div class="dream-panel ${dreamOn?'show':''}">
-    <div class="dp-graph">${dreamGraph(d)}</div>
-    <div class="dp-stats">
-      <div class="dp-row"><span>D</span><strong class="${cls}">${fmt(d.D,3)}</strong></div>
-      <div class="dp-row"><span>λq</span><strong>${fmt(d.lambda_q,1)}</strong></div>
-      <div class="dp-row"><span>R²</span><strong>${fmt(d.r2,3)}</strong></div>
-      <div class="dp-row"><span>Regime</span><strong class="${cls}">${d.regime}</strong></div>
-    </div>
+    <div class="dp-graph">${dreamGraph(d, feedName)}</div>
     <div class="dp-models">
-      <div class="dp-row ${s2cls}"><span>S2</span><strong>${ma.S2??'—'}</strong></div>
-      <div class="dp-row ${expcls}"><span>EXP</span><strong>${ma.EXP??'—'}</strong></div>
-      <div class="dp-row ${powcls}"><span>POWER</span><strong>${ma.POWER??'—'}</strong></div>
+      <div class="dp-row ${d.verdict==='S2_WINS'?'win':''}"><span>S2</span><strong>${ma.S2??'—'}</strong></div>
+      <div class="dp-row"><span>EXP</span><strong>${ma.EXP??'—'}</strong></div>
+      <div class="dp-row"><span>POWER</span><strong>${ma.POWER??'—'}</strong></div>
+      <div class="dp-row"><span>ΔAICc</span><strong>${fmt(d.delta_aicc,1)}</strong></div>
     </div>
-    <div class="dp-verdict ${vcls}">${d.verdict.replace(/_/g,' ')} · ΔAICc=${fmt(d.delta_aicc,1)}</div>
-    <div class="dp-note">${esc(d.model_note)}</div>
+    <div class="dp-verdict ${vcls}">${d.verdict.replace(/_/g,' ')} · ${esc(d.model_note)}</div>
   </div>`;
 }
 
@@ -72,96 +91,130 @@ function render(s){
     <div class="kpi g"><span>Natural</span><strong>${ds.natural||0}</strong><small>D&lt;0.8</small></div>
     <div class="kpi r"><span>Extraction</span><strong>${ds.extraction||0}</strong><small>D&gt;1</small></div>
     <div class="kpi a"><span>Threshold</span><strong>${ds.threshold||0}</strong><small>D≈1</small></div>
-    <div class="kpi"><span>Quakes</span><strong>${f.earthquakes?.count||0}</strong><small>24h</small></div>
-    <div class="kpi"><span>Flights</span><strong>${f.flights?(f.flights.count/1000).toFixed(1)+'k':'—'}</strong><small>airborne</small></div>
   </div><div class="grid">`;
 
-  // Earthquakes
-  const eq=f.earthquakes||{};
-  h+=eq.status==='ok'?`<div class="panel">${dreamBlock(eq.dream)}
-    <div class="p-head"><span class="p-title">🌍 Earthquakes</span><span class="p-cat">geo</span></div>
-    <div class="p-body"><strong>${eq.count} events · max M${fmt(eq.max_mag,1)}</strong>${spark(eq.sparkline,'#fbbf24')}
-    ${(eq.latest||[]).slice(0,10).map(q=>`<div class="quake-row"><span class="quake-mag ${q.mag>=5?'m5':q.mag>=4.5?'m45':''}">M${fmt(q.mag,1)}</span><span class="quake-place">${esc(q.place)}</span><span class="quake-depth">${fmt(q.depth,0)}km</span></div>`).join('')}
-    </div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">🌍 Earthquakes</span></div></div>`;
+  // 1. NEWS (first)
+  const nw=f.news||{};
+  h+=nw.status==='ok'?`<div class="panel">
+    <div class="p-head"><span class="p-title">📰 Global News</span><span class="p-cat">news</span></div>
+    <div class="p-body scroll">${(nw.articles||[]).slice(0,12).map(a=>`<div class="news-item"><a href="${esc(a.url)}" target="_blank">${esc(a.title)}</a><div class="meta">${esc(a.source||'')} ${esc(a.date||'')}</div></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📰 News</span></div></div>`;
 
-  // Markets
+  // 2. Markets (with inline D values)
   const mk=f.markets||{};
   h+=mk.status==='ok'?`<div class="panel">
     <div class="p-head"><span class="p-title">📈 Markets</span><span class="p-cat">markets</span></div>
     <div class="p-body">${(mk.instruments||[]).map(m=>{
       const dr=m.dream||{};const cls=dr.regime==='EXTRACTION'?'ext':dr.regime==='NATURAL'?'nat':'thr';
-      return `<div class="coin-row"><span class="coin-name">${esc(m.name)}</span><span class="coin-price">${m.current>100?fmt(m.current,0):fmt(m.current,2)}</span>${spark(m.sparkline,dr.regime==='EXTRACTION'?'#f87171':dr.regime==='NATURAL'?'#4ade80':'#22d3ee')}<span class="coin-d ${cls}">D=${fmt(dr.D,2)}</span></div>`;
+      const dColor=dr.regime==='EXTRACTION'?'#f87171':dr.regime==='NATURAL'?'#4ade80':'#fbbf24';
+      return `<div class="coin-row" title="${dr.model_note||''}"><span class="coin-name">${esc(m.name)}</span><span class="coin-price">${m.current>100?fmt(m.current,0):fmt(m.current,2)}</span>${spark(m.sparkline,dColor)}<span class="coin-d ${cls}" title="D=${fmt(dr.D,3)} ${dr.regime}">${fmt(dr.D,2)}</span></div>`;
     }).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📈 Markets</span></div></div>`;
 
-  // DREAM analysis panel for markets (shows when DREAM toggle is ON)
+  // 3. Markets DREAM (single graph per instrument, NOT 2)
   if(mk.status==='ok'&&(mk.instruments||[]).some(m=>m.dream)){
     const instWithDream=(mk.instruments||[]).filter(m=>m.dream);
     h+=`<div class="panel">
-      <div class="p-head"><span class="p-title">🔬 Market DREAM</span><span class="p-cat">analysis</span></div>
-      <div class="p-body">${instWithDream.slice(0,3).map(m=>dreamBlock(m.dream)).join('')}
-      ${instWithDream.length>3?`<div class="meta">${instWithDream.length-3} more — toggle individual instruments</div>`:''}
+      <div class="p-head"><span class="p-title">🔬 S2 Analysis</span><span class="p-cat">DREAM</span></div>
+      <div class="p-body scroll">
+        <div style="margin-bottom:4px">
+          <select id="dreamSelect" onchange="renderMarketDream()" style="background:var(--bg2);color:var(--fg);border:1px solid var(--border);border-radius:4px;padding:3px 6px;font-size:11px;width:100%">
+            ${instWithDream.map((m,i)=>`<option value="${i}">${esc(m.name)} (D=${fmt(m.dream.D,2)})</option>`).join('')}
+          </select>
+        </div>
+        <div id="marketDreamContent"></div>
       </div></div>`;
   }
 
-  // Flights
-  const fl=f.flights||{};
-  h+=fl.status==='ok'?`<div class="panel">${dreamBlock(fl.dream)}
-    <div class="p-head"><span class="p-title">✈️ Flights</span><span class="p-cat">aviation</span></div>
-    <div class="p-body"><div class="flight-info"><span class="big">${(fl.count||0).toLocaleString()}</span><span>aircraft airborne</span></div>
-    ${Object.entries(fl.bands||{}).map(([k,v])=>`<div class="band-row"><span>${k}</span><span>${v}</span></div>`).join('')}
-    <div class="meta">Top: ${(fl.top_origins||[]).slice(0,6).map(([c,n])=>`${c}(${n})`).join(', ')}</div>
-    </div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">✈️ Flights</span></div></div>`;
-
-  // News
-  const nw=f.news||{};
-  h+=nw.status==='ok'?`<div class="panel">
-    <div class="p-head"><span class="p-title">📰 News</span><span class="p-cat">news</span></div>
-    <div class="p-body scroll">${(nw.articles||[]).slice(0,12).map(a=>`<div class="news-item"><a href="${esc(a.url)}" target="_blank">${esc(a.title)}</a><div class="meta">${esc(a.source||'')} ${esc(a.date||'')}</div></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📰 News</span></div></div>`;
-
-  // Weather
+  // 4. Weather
   const wt=f.weather||{};
-  h+=wt.status==='ok'?`<div class="panel">${dreamBlock(wt.dream)}
+  h+=wt.status==='ok'?`<div class="panel">${dreamBlock(wt.dream,'Weather')}
     <div class="p-head"><span class="p-title">🌡️ Weather</span><span class="p-cat">env</span></div>
-    <div class="p-body scroll">${(wt.cities||[]).map(w=>`<div class="wthr-row"><span class="wthr-city">${esc(w.city)}</span><span class="wthr-temp ${w.temp>30?'hot':w.temp<5?'cold':''}">${w.temp}°C</span><span style="color:var(--muted)">${w.wind}km/h ${w.humidity}%</span></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">🌡️ Weather</span></div></div>`;
+    <div class="p-body scroll">${(wt.cities||[]).map(w=>`<div class="wthr-row"><span class="wthr-city">${esc(w.city)}</span><span class="wthr-temp ${w.temp>30?'hot':w.temp<5?'cold':''}">${w.temp}°C</span><span style="color:var(--muted)">${w.wind}km/h</span></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">🌡️ Weather</span></div></div>`;
 
-  // FX
+  // 5. FX
   const fx=f.fx||{};
   h+=fx.status==='ok'?`<div class="panel">
     <div class="p-head"><span class="p-title">💱 FX Rates</span><span class="p-cat">markets</span></div>
-    <div class="p-body">${(fx.rates||[]).map(r=>`<div class="fx-row"><span class="fx-pair">${esc(r.pair)}</span><span class="fx-rate">${fmt(r.rate,4)}</span></div>`).join('')}<div class="meta">as of ${esc(fx.date)}</div></div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">💱 FX</span></div></div>`;
+    <div class="p-body">${(fx.rates||[]).map(r=>`<div class="fx-row"><span class="fx-pair">${esc(r.pair)}</span><span class="fx-rate">${fmt(r.rate,4)}</span></div>`).join('')}<div class="meta">${esc(fx.date)}</div></div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">💱 FX</span></div></div>`;
 
-  // FX History (with DREAM)
+  // 6. FX History
   const fxh=f.fx_history||{};
-  h+=fxh.status==='ok'?`<div class="panel">${dreamBlock(fxh.dream)}
-    <div class="p-head"><span class="p-title">💱 FX History</span><span class="p-cat">markets</span></div>
-    <div class="p-body"><strong>USD/EUR ${fxh.n_days||0} days</strong>${spark(fxh.sparkline,'#22d3ee')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">💱 FX History</span></div></div>`;
+  h+=fxh.status==='ok'?`<div class="panel">${dreamBlock(fxh.dream,'FX History')}
+    <div class="p-head"><span class="p-title">📊 FX History</span><span class="p-cat">markets</span></div>
+    <div class="p-body"><strong>USD/EUR ${fxh.n_days||0} days</strong>${spark(fxh.sparkline,'#22d3ee')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📊 FX History</span></div></div>`;
 
-  // Reddit
+  // 7. Space Weather
+  const sw=f.space_weather||f.solar_wind||{};
+  h+=sw.status==='ok'?`<div class="panel">${dreamBlock(sw.dream,'Space Weather')}
+    <div class="p-head"><span class="p-title">☀️ Space Weather</span><span class="p-cat">space</span></div>
+    <div class="p-body"><strong style="font-size:16px">Kp=${fmt(sw.current,1)}</strong>${spark(sw.sparkline,'#fbbf24')}<div class="meta">${sw.count} readings</div></div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">☀️ Space Weather</span></div></div>`;
+
+  // 8. Solar Flux
+  const sf=f.solar_flux||{};
+  h+=sf.status==='ok'?`<div class="panel">${dreamBlock(sf.dream,'Solar Flux')}
+    <div class="p-head"><span class="p-title">📡 Solar Flux</span><span class="p-cat">space</span></div>
+    <div class="p-body"><strong style="font-size:16px">${fmt(sf.current,0)} sfu</strong>${spark(sf.sparkline,'#fbbf24')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📡 Solar Flux</span></div></div>`;
+
+  // 9. Flights
+  const fl=f.flights||{};
+  h+=fl.status==='ok'?`<div class="panel">${dreamBlock(fl.dream,'Flights')}
+    <div class="p-head"><span class="p-title">✈️ Flights</span><span class="p-cat">aviation</span></div>
+    <div class="p-body"><div class="flight-info"><span class="big">${(fl.count||0).toLocaleString()}</span><span>aircraft airborne</span></div>
+    ${Object.entries(fl.bands||{}).map(([k,v])=>`<div class="band-row"><span>${k}</span><span>${v}</span></div>`).join('')}
+    </div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">✈️ Flights</span><div class="meta">timeout — will retry next scan</div></div></div>`;
+
+  // 10. Reddit
   const rd=f.reddit||{};
   h+=rd.status==='ok'?`<div class="panel">
     <div class="p-head"><span class="p-title">💬 Reddit</span><span class="p-cat">social</span></div>
     <div class="p-body scroll">${(rd.posts||[]).slice(0,10).map(p=>`<div class="reddit-item"><a href="${esc(p.url)}" target="_blank">${esc(p.title)}</a></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">💬 Reddit</span></div></div>`;
 
-  // Wikipedia
+  // 11. Wikipedia
   const wk=f.wikipedia||{};
-  h+=wk.status==='ok'?`<div class="panel">${dreamBlock(wk.dream)}
+  h+=wk.status==='ok'?`<div class="panel">${dreamBlock(wk.dream,'Wikipedia')}
     <div class="p-head"><span class="p-title">📚 Wikipedia</span><span class="p-cat">social</span></div>
-    <div class="p-body scroll"><strong>${wk.count} recent edits</strong>${(wk.edits||[]).slice(0,12).map(e=>`<div class="wiki-item">${esc(e.title)} <span style="color:var(--muted)">${esc(e.user)}</span></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📚 Wikipedia</span></div></div>`;
+    <div class="p-body scroll"><strong>${wk.count} recent edits</strong>${(wk.edits||[]).slice(0,10).map(e=>`<div class="wiki-item">${esc(e.title)}</div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">📚 Wikipedia</span></div></div>`;
 
-  // HackerNews
+  // 12. Hacker News
   const hn=f.hackernews||{};
-  h+=hn.status==='ok'?`<div class="panel">${dreamBlock(hn.dream)}
+  h+=hn.status==='ok'?`<div class="panel">
     <div class="p-head"><span class="p-title">🔧 Hacker News</span><span class="p-cat">tech</span></div>
     <div class="p-body scroll">${(hn.stories||[]).slice(0,10).map(s=>`<div class="news-item"><a href="${esc(s.url)||'#'}" target="_blank">${esc(s.title)}</a><div class="meta">↑${s.score} · ${s.comments} comments</div></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">🔧 Hacker News</span></div></div>`;
 
-  // GitHub
+  // 13. GitHub
   const gh=f.github||{};
-  h+=gh.status==='ok'?`<div class="panel">${dreamBlock(gh.dream)}
-    <div class="p-head"><span class="p-title">⚡ GitHub Trending</span><span class="p-cat">tech</span></div>
+  h+=gh.status==='ok'?`<div class="panel">
+    <div class="p-head"><span class="p-title">⚡ GitHub</span><span class="p-cat">tech</span></div>
     <div class="p-body scroll">${(gh.repos||[]).slice(0,10).map(r=>`<div class="news-item"><a href="${esc(r.url)}" target="_blank">${esc(r.name)}</a><div class="meta">★${r.stars} ${esc(r.lang||'')}</div></div>`).join('')}</div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">⚡ GitHub</span></div></div>`;
 
-  h+=`</div><footer>DREAM World Observatory · live data · S2 analysis overlay · not financial advice</footer>`;
+  // 14. Earthquakes (LAST)
+  const eq=f.earthquakes||{};
+  h+=eq.status==='ok'?`<div class="panel">${dreamBlock(eq.dream,'Earthquakes')}
+    <div class="p-head"><span class="p-title">🌍 Earthquakes</span><span class="p-cat">geo</span></div>
+    <div class="p-body scroll"><strong>${eq.count} events · max M${fmt(eq.max_mag,1)}</strong>${spark(eq.sparkline,'#fbbf24')}
+    ${(eq.latest||[]).slice(0,8).map(q=>`<div class="quake-row"><span class="quake-mag ${q.mag>=5?'m5':q.mag>=4.5?'m45':''}">M${fmt(q.mag,1)}</span><span class="quake-place">${esc(q.place)}</span><span class="quake-depth">${fmt(q.depth,0)}km</span></div>`).join('')}
+    </div></div>`:`<div class="panel fail"><div class="p-head"><span class="p-title">🌍 Earthquakes</span></div></div>`;
+
+  h+=`</div><footer>DREAM World Observatory · live data · S2 retention analysis · not financial advice</footer>`;
   document.getElementById('app').innerHTML=h;
+  
+  // Render market dream selector content
+  renderMarketDream();
+}
+
+function renderMarketDream(){
+  if(!snap)return;
+  const mk=snap.feeds?.markets;
+  if(!mk||mk.status!=='ok')return;
+  const instWithDream=(mk.instruments||[]).filter(m=>m.dream);
+  if(!instWithDream.length)return;
+  const sel=document.getElementById('dreamSelect');
+  if(!sel)return;
+  const idx=parseInt(sel.value)||0;
+  const m=instWithDream[idx];
+  const el=document.getElementById('marketDreamContent');
+  if(el&&m.dream){
+    el.innerHTML=dreamBlock(m.dream,m.name);
+  }
 }
 
 async function load(){

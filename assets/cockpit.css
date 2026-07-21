@@ -22,36 +22,27 @@ body{background:var(--bg);color:var(--fg);font:12px/1.4 -apple-system,system-ui,
 .kpi.g strong{color:var(--good)}.kpi.r strong{color:var(--bad)}.kpi.a strong{color:var(--warn)}
 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:8px 10px;display:flex;flex-direction:column;gap:5px;min-height:140px}
-.panel.fail{opacity:.4}
+.panel.fail{opacity:.5}
 .p-head{display:flex;justify-content:space-between;align-items:center}
 .p-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
 .p-cat{font-size:8px;color:var(--m2);background:var(--bg2);padding:2px 5px;border-radius:3px;text-transform:uppercase}
 .p-body{flex:1;display:flex;flex-direction:column;gap:4px;font-size:11px;max-height:320px;overflow:hidden}
 .p-body.scroll{overflow-y:auto;max-height:280px}
 .spark{height:24px;width:100%}
-/* DREAM overlay — bigger, more readable */
+/* DREAM overlay — dazzling, labeled, narrated */
 .dream-panel{display:none;background:var(--panel2);border:1px solid rgba(34,211,238,.25);border-radius:6px;padding:8px;margin-bottom:6px}
 .dream-panel.show{display:block}
-.dp-graph{background:var(--bg);border-radius:4px;padding:4px;margin-bottom:6px;height:80px}
-.dp-graph svg{width:100%;height:100%}
-.dp-stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px;font-size:10px;margin-bottom:4px}
-.dp-stats .dp-row{display:flex;flex-direction:column;align-items:center;padding:3px 2px;background:var(--bg);border-radius:3px}
-.dp-stats .dp-row span{color:var(--muted);font-size:8px;text-transform:uppercase}
-.dp-stats .dp-row strong{font-family:var(--mono);font-size:13px;font-weight:700}
-.dp-stats .dp-row strong.ext{color:var(--bad)}
-.dp-stats .dp-row strong.nat{color:var(--good)}
-.dp-stats .dp-row strong.thr{color:var(--warn)}
+.dp-graph{background:var(--bg);border-radius:4px;padding:4px;margin-bottom:4px}
+.dp-graph svg{width:100%;height:90px}
 .dp-models{display:flex;gap:4px;margin:4px 0;padding:4px;background:var(--bg);border-radius:4px}
 .dp-models .dp-row{flex:1;display:flex;flex-direction:column;align-items:center;font-size:9px}
-.dp-models .dp-row span{color:var(--muted);font-size:8px}
+.dp-models .dp-row span{color:var(--muted);font-size:8px;text-transform:uppercase}
 .dp-models .dp-row strong{font-family:var(--mono);font-size:11px;font-weight:600}
 .dp-models .dp-row.win strong{color:var(--good)}
-.dp-models .dp-row.lose strong{color:var(--bad)}
-.dp-verdict{font-size:11px;font-weight:700;text-align:center;padding:4px;font-family:var(--mono);border-radius:4px;margin:2px 0}
-.dp-verdict.win{background:rgba(74,222,128,.1);color:var(--good)}
-.dp-verdict.tie{background:rgba(251,191,36,.1);color:var(--warn)}
-.dp-verdict.lose{background:rgba(248,113,113,.1);color:var(--bad)}
-.dp-note{font-size:9px;color:var(--m2);text-align:center}
+.dp-verdict{font-size:10px;font-weight:600;text-align:center;padding:4px;font-family:var(--mono);border-radius:4px;margin:2px 0}
+.dp-verdict.win{background:rgba(74,222,128,.08);color:var(--good)}
+.dp-verdict.tie{background:rgba(251,191,36,.08);color:var(--warn)}
+.dp-verdict.lose{background:rgba(248,113,113,.08);color:var(--bad)}
 /* Feed content */
 .news-item{padding:4px 0;border-bottom:1px solid var(--border);font-size:11px;overflow:hidden}
 .news-item:last-child{border:0}
@@ -64,11 +55,10 @@ body{background:var(--bg);color:var(--fg);font:12px/1.4 -apple-system,system-ui,
 .quake-mag.m45{color:var(--warn)}.quake-mag.m5{color:var(--bad)}
 .quake-place{color:var(--muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0 6px}
 .quake-depth{color:var(--m2);font-family:var(--mono)}
-.coin-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:11px}
+.coin-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:11px;cursor:help}
 .coin-name{font-weight:600;min-width:80px}
 .coin-price{font-family:var(--mono)}
-.coin-chg{font-size:10px;font-family:var(--mono)}.coin-chg.up{color:var(--good)}.coin-chg.down{color:var(--bad)}
-.coin-d{font-size:9px;font-family:var(--mono);min-width:45px;text-align:right}
+.coin-d{font-size:10px;font-family:var(--mono);min-width:35px;text-align:right;font-weight:700}
 .coin-d.ext{color:var(--bad)}.coin-d.nat{color:var(--good)}.coin-d.thr{color:var(--warn)}
 .fx-row{display:flex;justify-content:space-between;padding:3px 0;font-size:11px}
 .fx-pair{color:var(--muted)}.fx-rate{font-family:var(--mono);font-weight:600}
@@ -83,8 +73,9 @@ body{background:var(--bg);color:var(--fg);font:12px/1.4 -apple-system,system-ui,
 .reddit-item{padding:4px 0;border-bottom:1px solid var(--border);font-size:11px}
 .reddit-item:last-child{border:0}
 .reddit-item a{color:var(--fg);text-decoration:none}.reddit-item a:hover{color:var(--acc)}
-.reddit-meta{font-size:9px;color:var(--muted)}
 .meta{font-size:9px;color:var(--m2);margin-top:3px}
 footer{text-align:center;padding:10px 0;font-size:10px;color:var(--m2);margin-top:8px;border-top:1px solid var(--border)}
+select{outline:none}
+select:focus{border-color:var(--acc)}
 @media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.grid{grid-template-columns:1fr}}
