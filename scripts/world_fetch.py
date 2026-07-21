@@ -113,11 +113,15 @@ else:snap['feeds']['earthquakes']={'name':'Earthquakes','status':'failed'}
 
 # 2 NOAA solar wind — fix URL
 print('NOAA...')
-d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-1-day.json',timeout=30)
+d=fetch('https://services.swpc.noaa.gov/products/summary/solar-wind-speed.json',timeout=30)
 if not d:d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json',timeout=30)
 if d:
     try:
-        j=json.loads(d);speeds=[float(r[1]) for r in j[1:] if r[1] and float(r[1])>0]
+        j=json.loads(d)
+        if 'data' in j:
+            speeds=[float(r[1]) for r in j['data'] if r[1] and float(r[1])>0]
+        else:
+            speeds=[float(r[1]) for r in j[1:] if r[1] and float(r[1])>0]
         snap['feeds']['solar_wind']={'name':'Solar Wind','category':'space','status':'ok','current':speeds[-1]if speeds else 0,'unit':'km/s','count':len(speeds),'sparkline':spark(speeds),'dream':dream_analysis(speeds)}
         print(f'  ok {len(speeds)}')
     except:snap['feeds']['solar_wind']={'name':'Solar Wind','status':'failed'}
@@ -128,7 +132,7 @@ print('Yahoo Finance...')
 market_symbols=[
     ('^GSPC','S&P 500'),('^NDX','Nasdaq 100'),('^DJI','Dow Jones'),('^VIX','VIX'),
     ('^FTSE','FTSE 100'),('^GDAXI','DAX'),('^N225','Nikkei 225'),('^HSI','Hang Seng'),
-    ('BTC-USD','Bitcoin'),('ETH-USD','Ethereum'),
+    ('CL=F','Crude Oil'),('GC=F','Gold'),('NG=F','Natural Gas'),('SI=F','Silver'),
 ]
 markets=[]
 for sym,name in market_symbols:
@@ -151,6 +155,17 @@ if d:
         print(f'  ok {len(fx)}')
     except:snap['feeds']['fx']={'name':'FX','status':'failed'}
 else:snap['feeds']['fx']={'name':'FX','status':'failed'}
+
+# FX History for DREAM
+print('FX History...')
+d=fetch('https://api.frankfurter.app/2024-01-01..?from=USD&to=EUR',timeout=20)
+if d:
+    try:
+        j=json.loads(d);rates=j.get('rates',{});eur_vals=[v['EUR']for v in rates.values()]
+        snap['feeds']['fx_history']={'name':'FX History','category':'markets','status':'ok','n_days':len(eur_vals),'sparkline':spark(eur_vals),'dream':dream_analysis(eur_vals)}
+        print(f'  ok {len(eur_vals)} days')
+    except:snap['feeds']['fx_history']={'name':'FX History','status':'failed'}
+else:snap['feeds']['fx_history']={'name':'FX History','status':'failed'}
 
 # 5 OpenSky
 print('OpenSky...')
@@ -199,8 +214,15 @@ for city,lat,lon in cities:
         except:pass
     time.sleep(0.1)
 if weather:
+    # Also fetch 30-day historical temps for NYC for DREAM time series
+    hd=fetch('https://archive-api.open-meteo.com/v1/archive?latitude=40.78&longitude=-73.97&start_date=2024-06-01&end_date=2024-12-31&daily=temperature_2m_max&timezone=auto',timeout=20)
+    hist_temps=[]
+    if hd:
+        try:
+            hj=json.loads(hd);hist_temps=hj.get('daily',{}).get('temperature_2m_max',[])
+        except:pass
     temps=[w['temp']for w in weather]
-    snap['feeds']['weather']={'name':'Weather','category':'environment','status':'ok','cities':weather,'sparkline':spark(temps),'dream':dream_analysis(temps)}
+    snap['feeds']['weather']={'name':'Weather','category':'environment','status':'ok','cities':weather,'sparkline':spark(temps),'dream':dream_analysis(hist_temps)if len(hist_temps)>=10 else dream_analysis(temps)}
     print(f'  ok {len(weather)}')
 else:snap['feeds']['weather']={'name':'Weather','status':'failed'}
 
