@@ -1,18 +1,34 @@
 #!/usr/bin/env python3
-"""DREAM World Observatory v3 — 15 sources, RSS + free APIs."""
+"""DREAM World Observatory v4 — proven data sources from working repos."""
 import os,json,time,urllib.request,csv,io,re,xml.etree.ElementTree as ET
 from datetime import datetime,timezone
 import numpy as np
 from scipy.optimize import curve_fit
+
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'data','derived')
 os.makedirs(OUT,exist_ok=True)
+
 def fetch(url,timeout=30,hdrs=None):
     try:
-        h={'User-Agent':'Mozilla/5.0 (DREAM-Observatory)'}
+        h={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         if hdrs:h.update(hdrs)
         req=urllib.request.Request(url,headers=h)
         with urllib.request.urlopen(req,timeout=timeout) as r:return r.read()
     except Exception as e:print(f'    err:{e}');return None
+
+def fetch_yahoo(symbol, interval='1d', period='1y'):
+    """Yahoo Finance chart API — proven to work from GitHub Actions."""
+    url=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range={period}&interval={interval}&includePrePost=false&events=history'
+    d=fetch(url,timeout=20)
+    if not d:return None
+    try:
+        j=json.loads(d)
+        ts=j['chart']['result'][0]['timestamp']
+        closes=j['chart']['result'][0]['indicators']['quote'][0]['close']
+        vals=[c for c in closes if c is not None]
+        return vals
+    except:return None
+
 def s2(t,A,l,D):return A*np.exp(-np.power(np.maximum(t,1e-6)/max(l,1e-6),D))
 def expf(t,A,l):return A*np.exp(-t/max(l,1e-6))
 def powf(t,A,a):return A*np.power(np.maximum(t,1e-6),-a)
@@ -75,9 +91,12 @@ def parse_rss(xml_bytes,max_items=20):
                 articles.append({'title':(entry.findtext(f'{ns}title','')or'')[:100],'url':link,'date':entry.findtext(f'{ns}published',''),'source':''})
     except:pass
     return articles
+
+import urllib.parse
 NOW=datetime.now(timezone.utc).isoformat()
 snap={'generated_at':NOW,'feeds':{}}
-# 1 USGS
+
+# 1 USGS earthquakes
 print('USGS...')
 d=fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv',timeout=45)
 if d:
@@ -91,29 +110,37 @@ if d:
     snap['feeds']['earthquakes']={'name':'Earthquakes','category':'geophysical','status':'ok','count':len(quakes),'latest':quakes[:25],'max_mag':max(mags)if mags else 0,'sparkline':spark(mags),'dream':dream_analysis(mags)}
     print(f'  ok {len(quakes)}')
 else:snap['feeds']['earthquakes']={'name':'Earthquakes','status':'failed'}
-# 2 NOAA
+
+# 2 NOAA solar wind — fix URL
 print('NOAA...')
-d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json',timeout=30)
+d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-1-day.json',timeout=30)
+if not d:d=fetch('https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json',timeout=30)
 if d:
     try:
-        j=json.loads(d);speeds=[float(r[1])for r in j[1:]if r[1]and float(r[1])>0]
+        j=json.loads(d);speeds=[float(r[1]) for r in j[1:] if r[1] and float(r[1])>0]
         snap['feeds']['solar_wind']={'name':'Solar Wind','category':'space','status':'ok','current':speeds[-1]if speeds else 0,'unit':'km/s','count':len(speeds),'sparkline':spark(speeds),'dream':dream_analysis(speeds)}
         print(f'  ok {len(speeds)}')
     except:snap['feeds']['solar_wind']={'name':'Solar Wind','status':'failed'}
 else:snap['feeds']['solar_wind']={'name':'Solar Wind','status':'failed'}
-# 3 Crypto
-print('Crypto...')
-d=fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,SOL,DOGE,ADA,DOT,LINK&tsyms=USD',timeout=20)
-if d:
-    try:
-        j=json.loads(d);raw=j.get('RAW',{});crypto=[];prices=[]
-        for sym in['BTC','ETH','SOL','DOGE','ADA','DOT','LINK']:
-            if sym in raw and'USD'in raw[sym]:
-                r=raw[sym]['USD'];crypto.append({'name':sym,'symbol':sym,'price':r.get('PRICE',0),'change_24h':round(r.get('CHANGEPCT24HOUR',0),2),'volume':r.get('VOLUME24HOUR',0)});prices.append(r.get('PRICE',0))
-        snap['feeds']['crypto']={'name':'Crypto','category':'markets','status':'ok','coins':crypto,'sparkline':spark(prices),'dream':dream_analysis(prices)}
-        print(f'  ok {len(crypto)}')
-    except:snap['feeds']['crypto']={'name':'Crypto','status':'failed'}
-else:snap['feeds']['crypto']={'name':'Crypto','status':'failed'}
+
+# 3 Yahoo Finance markets — PROVEN TO WORK
+print('Yahoo Finance...')
+market_symbols=[
+    ('^GSPC','S&P 500'),('^NDX','Nasdaq 100'),('^DJI','Dow Jones'),('^VIX','VIX'),
+    ('^FTSE','FTSE 100'),('^GDAXI','DAX'),('^N225','Nikkei 225'),('^HSI','Hang Seng'),
+    ('BTC-USD','Bitcoin'),('ETH-USD','Ethereum'),
+]
+markets=[]
+for sym,name in market_symbols:
+    vals=fetch_yahoo(sym)
+    if vals and len(vals)>=10:
+        markets.append({'name':name,'symbol':sym,'current':round(vals[-1],2),'n':len(vals),'sparkline':spark(vals),'dream':dream_analysis(vals)})
+        print(f'  {name}: ok ({len(vals)})')
+    time.sleep(0.2)
+if markets:
+    snap['feeds']['markets']={'name':'Markets','category':'markets','status':'ok','instruments':markets}
+else:snap['feeds']['markets']={'name':'Markets','status':'failed'}
+
 # 4 FX
 print('FX...')
 d=fetch('https://api.frankfurter.app/latest?from=USD&to=EUR,GBP,JPY,CNY,RUB,BRL,INR,KRW',timeout=20)
@@ -124,6 +151,7 @@ if d:
         print(f'  ok {len(fx)}')
     except:snap['feeds']['fx']={'name':'FX','status':'failed'}
 else:snap['feeds']['fx']={'name':'FX','status':'failed'}
+
 # 5 OpenSky
 print('OpenSky...')
 d=fetch('https://opensky-network.org/api/states/all',timeout=45)
@@ -144,6 +172,7 @@ if d:
         print(f'  ok {len(states)}')
     except:snap['feeds']['flights']={'name':'Flights','status':'failed'}
 else:snap['feeds']['flights']={'name':'Flights','status':'failed'}
+
 # 6 News RSS
 print('News...')
 all_news=[]
@@ -157,6 +186,7 @@ for name,url in[('BBC','http://feeds.bbci.co.uk/news/world/rss.xml'),('Al Jazeer
     time.sleep(0.2)
 all_news=all_news[:25]
 snap['feeds']['news']={'name':'Global News','category':'news','status':'ok','count':len(all_news),'articles':all_news}if all_news else{'name':'News','status':'failed'}
+
 # 7 Weather
 print('Weather...')
 cities=[('New York',40.71,-74.01),('London',51.51,-0.13),('Tokyo',35.68,139.69),('Moscow',55.76,37.62),('Beijing',39.90,116.40),('Mumbai',19.08,72.88),('Sao Paulo',-23.55,-46.63),('Sydney',-33.87,151.21),('Cairo',30.04,31.24),('Lagos',6.52,3.38),('Dubai',25.20,55.27),('Singapore',1.35,103.82),('Berlin',52.52,13.40),('Paris',48.85,2.35),('Istanbul',41.01,28.98)]
@@ -173,30 +203,16 @@ if weather:
     snap['feeds']['weather']={'name':'Weather','category':'environment','status':'ok','cities':weather,'sparkline':spark(temps),'dream':dream_analysis(temps)}
     print(f'  ok {len(weather)}')
 else:snap['feeds']['weather']={'name':'Weather','status':'failed'}
-# 8 FRED
-print('FRED...')
-markets=[]
-for sid,name in[('SP500','S&P 500'),('VIXCLS','VIX'),('DCOILWTICO','WTI Oil'),('DGS10','10Y Treasury'),('FEDFUNDS','Fed Funds'),('DEXUSEU','USD/EUR'),('GOLDAMGBD228NLBM','Gold'),('UNRATE','Unemployment')]:
-    d=fetch(f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}',timeout=20)
-    if d:
-        rows=list(csv.reader(io.StringIO(d.decode())));vals=[]
-        for r in rows[1:]:
-            try:
-                v=float(r[1])
-                if not np.isnan(v):vals.append(v)
-            except:pass
-        if vals:markets.append({'name':name,'id':sid,'current':vals[-1],'n':len(vals),'sparkline':spark(vals),'dream':dream_analysis(vals)})
-    time.sleep(0.3)
-if markets:snap['feeds']['markets']={'name':'Markets','category':'markets','status':'ok','instruments':markets};print(f'  ok {len(markets)}')
-else:snap['feeds']['markets']={'name':'Markets','status':'failed'}
-# 9 Reddit RSS
+
+# 8 Reddit RSS
 print('Reddit...')
 d=fetch('https://www.reddit.com/r/worldnews/top.rss?limit=25&t=day',timeout=15)
 if d:
     posts=parse_rss(d,15);reddit=[{'title':p['title'][:100],'url':p['url'],'date':p.get('date','')}for p in posts]
     snap['feeds']['reddit']={'name':'Reddit','category':'social','status':'ok','posts':reddit};print(f'  ok {len(reddit)}')
 else:snap['feeds']['reddit']={'name':'Reddit','status':'failed'}
-# 10 Wikipedia
+
+# 9 Wikipedia
 print('Wikipedia...')
 d=fetch('https://en.wikipedia.org/w/api.php?action=query&list=recentchanges&rcprop=title|user|timestamp|sizes&rclimit=30&format=json&rctype=edit',timeout=20)
 if d:
@@ -205,16 +221,8 @@ if d:
         snap['feeds']['wikipedia']={'name':'Wikipedia','category':'social','status':'ok','count':len(changes),'edits':wiki,'sparkline':spark(sizes),'dream':dream_analysis(sizes)};print(f'  ok {len(changes)}')
     except:snap['feeds']['wikipedia']={'name':'Wikipedia','status':'failed'}
 else:snap['feeds']['wikipedia']={'name':'Wikipedia','status':'failed'}
-# 11 GDELT
-print('GDELT...')
-d=fetch('https://api.gdeltproject.org/api/v2/doc/doc?query=protest+OR+conflict+OR+disaster&mode=ArtList&maxrecords=25&format=json&sort=DateDesc&timespan=24h',timeout=45)
-if d:
-    try:
-        j=json.loads(d);articles=j.get('articles',[]);gdelt=[{'title':a.get('title','')[:100],'url':a.get('url',''),'source':a.get('domain',''),'date':a.get('seendate',''),'country':a.get('country','')}for a in articles[:20]]
-        snap['feeds']['gdelt']={'name':'GDELT','category':'news','status':'ok','count':len(articles),'articles':gdelt};print(f'  ok {len(articles)}')
-    except:snap['feeds']['gdelt']={'name':'GDELT','status':'failed'}
-else:snap['feeds']['gdelt']={'name':'GDELT','status':'failed'}
-# 12 HackerNews
+
+# 10 HackerNews
 print('HackerNews...')
 d=fetch('https://hacker-news.firebaseio.com/v0/topstories.json',timeout=15)
 if d:
@@ -228,7 +236,8 @@ if d:
         snap['feeds']['hackernews']={'name':'Hacker News','category':'tech','status':'ok','count':len(hn),'stories':hn,'sparkline':spark(scores),'dream':dream_analysis(scores)};print(f'  ok {len(hn)}')
     except:snap['feeds']['hackernews']={'name':'Hacker News','status':'failed'}
 else:snap['feeds']['hackernews']={'name':'Hacker News','status':'failed'}
-# 13 GitHub
+
+# 11 GitHub trending
 print('GitHub...')
 d=fetch('https://api.github.com/search/repositories?q=stars:>1000+pushed:>2024-07-01&sort=stars&order=desc&per_page=10',timeout=20,hdrs={'Accept':'application/vnd.github.v3+json'})
 if d:
@@ -237,6 +246,7 @@ if d:
         snap['feeds']['github']={'name':'GitHub Trending','category':'tech','status':'ok','count':len(repos),'repos':repos,'sparkline':spark(stars),'dream':dream_analysis(stars)};print(f'  ok {len(repos)}')
     except:snap['feeds']['github']={'name':'GitHub','status':'failed'}
 else:snap['feeds']['github']={'name':'GitHub','status':'failed'}
+
 # Summary
 ok=sum(1 for f in snap['feeds'].values()if f.get('status')=='ok');total=len(snap['feeds'])
 snap['summary']={'total_feeds':total,'ok_feeds':ok,'failed_feeds':total-ok}
