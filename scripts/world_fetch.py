@@ -120,7 +120,7 @@ if d:
         kp_vals=[float(r['Kp']) for r in j if 'Kp' in r]
         snap['feeds']['space_weather']={'name':'Space Weather (Kp)','category':'space','status':'ok','current':kp_vals[-1] if kp_vals else 0,'unit':'Kp','count':len(kp_vals),'sparkline':spark(kp_vals),'dream':dream_analysis(kp_vals)}
         print(f'  ok {len(kp_vals)} Kp points')
-    except as e:print(f'    err:{e}');snap['feeds']['space_weather']={'name':'Space Weather','status':'failed'}
+    except Exception as e:print(f'    err:{e}');snap['feeds']['space_weather']={'name':'Space Weather','status':'failed'}
 else:snap['feeds']['space_weather']={'name':'Space Weather','status':'failed'}
 
 print('NOAA Solar Flux...')
