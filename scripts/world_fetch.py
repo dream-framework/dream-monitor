@@ -163,20 +163,18 @@ if d:
     except:snap['feeds']['fx']={'name':'FX','status':'failed'}
 else:snap['feeds']['fx']={'name':'FX','status':'failed'}
 
-# FX History for DREAM
-print('FX History...')
-d=fetch('https://api.frankfurter.app/2024-01-01..?from=USD&to=EUR',timeout=20)
-if d:
-    try:
-        j=json.loads(d);rates=j.get('rates',{});eur_vals=[v['EUR']for v in rates.values()]
-        snap['feeds']['fx_history']={'name':'FX History','category':'markets','status':'ok','n_days':len(eur_vals),'sparkline':spark(eur_vals),'dream':dream_analysis(eur_vals)}
-        print(f'  ok {len(eur_vals)} days')
-    except:snap['feeds']['fx_history']={'name':'FX History','status':'failed'}
+# FX History via Yahoo Finance (more reliable)
+print('FX History (Yahoo)...')
+eur_vals=fetch_yahoo('EURUSD=X')
+if eur_vals and len(eur_vals)>=10:
+    snap['feeds']['fx_history']={'name':'FX History','category':'markets','status':'ok','n_days':len(eur_vals),'sparkline':spark(eur_vals),'dream':dream_analysis(eur_vals),'current':round(eur_vals[-1],4)}
+    print(f'  ok {len(eur_vals)} days')
 else:snap['feeds']['fx_history']={'name':'FX History','status':'failed'}
 
 # 5 OpenSky
 print('OpenSky...')
-d=fetch('https://opensky-network.org/api/states/all',timeout=45)
+d=fetch('https://opensky-network.org/api/states/all',timeout=60)
+if not d:d=fetch('https://opensky-network.org/api/states/all',timeout=60)
 if d:
     try:
         j=json.loads(d);states=j.get('states',[]);bands={'N Hemisphere':0,'S Hemisphere':0,'Tropics':0};altitudes=[];countries={}
