@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T14:38:19.312870+00:00",
+  "generated_at": "2026-07-26T16:03:33.065516+00:00",
   "feeds": {
     "earthquakes": {
       "name": "Earthquakes",
@@ -128,14 +128,6 @@
           "time": "2026-07-25T18:33:17.546Z"
         },
         {
-          "mag": 4.4,
-          "lat": 47.1353,
-          "lon": 153.1701,
-          "depth": 89.719,
-          "place": "Kuril Islands",
-          "time": "2026-07-25T15:04:27.300Z"
-        },
-        {
           "mag": 4.3,
           "lat": 51.7323,
           "lon": -173.4513,
@@ -200,6 +192,14 @@
           "time": "2026-07-25T23:31:43.633Z"
         },
         {
+          "mag": 3.73,
+          "lat": 18.948,
+          "lon": -64.4616,
+          "depth": 77.0,
+          "place": "76 km NNE of Cruz Bay, U.S. Virgin Islands",
+          "time": "2026-07-26T14:31:04.350Z"
+        },
+        {
           "mag": 3.36,
           "lat": 19.415666666667,
           "lon": -65.672833333333,
@@ -210,6 +210,10 @@
       ],
       "max_mag": 5.8,
       "sparkline": [
+        87,
+        1,
+        0,
+        58,
         68,
         13,
         100,
@@ -255,42 +259,38 @@
         0,
         9,
         13,
-        55,
-        1,
-        11,
-        63,
-        7
+        55
       ],
       "dream": {
-        "D": 9.9959,
+        "D": 9.956,
         "lambda_q": 0.0,
-        "r2": 0.8745,
+        "r2": 0.8756,
         "regime": "EXTRACTION",
         "verdict": "S2_LOSES",
         "delta_aicc": 3.08,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -68.0,
-          "EXP": -71.0,
-          "POWER": -70.5
+          "S2": -68.2,
+          "EXP": -71.3,
+          "POWER": -70.8
         },
         "retention_curve": [
           1.0,
-          -0.1338,
-          -0.1212,
-          -0.0074,
-          0.1164,
-          0.0479,
-          -0.0301,
-          -0.1648,
-          0.185,
-          -0.1141,
-          0.0337,
-          0.0179,
-          -0.0209,
-          -0.0176,
-          -0.1049,
-          0.0415
+          -0.1242,
+          -0.1214,
+          -0.0303,
+          0.1194,
+          0.0203,
+          0.0348,
+          -0.182,
+          0.1451,
+          -0.0949,
+          0.0708,
+          -0.0249,
+          0.0084,
+          0.0716,
+          -0.1255,
+          0.0073
         ],
         "fit_curve": [
           1.0,
@@ -354,9 +354,8 @@
       "status": "ok",
       "current": 2.0,
       "unit": "Kp",
-      "count": 60,
+      "count": 61,
       "sparkline": [
-        14,
         0,
         7,
         0,
@@ -405,92 +404,93 @@
         21,
         29,
         29,
+        29,
         29
       ],
       "dream": {
-        "D": 1.5674,
-        "lambda_q": 4.19,
-        "r2": 0.9757,
+        "D": 1.5689,
+        "lambda_q": 4.18,
+        "r2": 0.9755,
         "regime": "EXTRACTION",
         "verdict": "S2_WINS",
-        "delta_aicc": -7.36,
+        "delta_aicc": -7.31,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -80.0,
-          "EXP": -72.7,
+          "S2": -79.9,
+          "EXP": -72.6,
           "POWER": -35.6
         },
         "retention_curve": [
           1.0,
           0.7706,
           0.6801,
-          0.5637,
-          0.4005,
-          0.2106,
-          0.2063,
-          0.0958,
-          0.0331,
-          0.0371,
-          0.0188,
-          -0.0362,
-          -0.0622,
-          -0.0614,
-          -0.1205
+          0.5636,
+          0.4003,
+          0.2104,
+          0.2062,
+          0.0957,
+          0.0327,
+          0.037,
+          0.0181,
+          -0.0371,
+          -0.0628,
+          -0.0619,
+          -0.1214
         ],
         "fit_curve": [
           1.0,
-          0.9852,
-          0.9568,
-          0.9201,
-          0.8775,
-          0.8307,
-          0.7813,
-          0.7303,
-          0.6788,
-          0.6275,
+          0.9853,
+          0.957,
+          0.9203,
+          0.8777,
+          0.8309,
+          0.7815,
+          0.7305,
+          0.679,
+          0.6277,
           0.5772,
-          0.5282,
+          0.5283,
           0.4812,
-          0.4364,
-          0.394,
-          0.3543,
-          0.3172,
-          0.2829,
-          0.2513,
-          0.2224,
-          0.1961,
-          0.1723,
-          0.1509,
-          0.1316,
-          0.1144,
-          0.0992,
-          0.0856,
-          0.0737,
-          0.0633,
-          0.0541,
-          0.0462,
-          0.0393,
-          0.0333,
-          0.0281,
-          0.0237,
-          0.0199,
-          0.0167,
-          0.0139,
-          0.0116,
-          0.0097,
-          0.008,
+          0.4363,
+          0.3939,
+          0.3541,
+          0.317,
+          0.2827,
+          0.2511,
+          0.2222,
+          0.1959,
+          0.1721,
+          0.1506,
+          0.1313,
+          0.1142,
+          0.0989,
+          0.0854,
+          0.0735,
+          0.063,
+          0.0539,
+          0.046,
+          0.0391,
+          0.0331,
+          0.028,
+          0.0236,
+          0.0198,
+          0.0166,
+          0.0138,
+          0.0115,
+          0.0096,
+          0.0079,
           0.0066,
-          0.0055,
-          0.0045,
-          0.0037,
+          0.0054,
+          0.0044,
+          0.0036,
           0.003,
-          0.0025,
+          0.0024,
           0.002,
           0.0016,
           0.0013
         ],
         "n_points": 15,
-        "model_note": "S2 beats EXP (delta=-7.4)"
+        "model_note": "S2 beats EXP (delta=-7.3)"
       }
     },
     "solar_flux": {
@@ -2712,171 +2712,171 @@
       "name": "Flights",
       "category": "aviation",
       "status": "ok",
-      "count": 12850,
+      "count": 13418,
       "bands": {
-        "N Hemisphere": 11715,
-        "S Hemisphere": 163,
-        "Tropics": 830
+        "N Hemisphere": 12302,
+        "S Hemisphere": 146,
+        "Tropics": 828
       },
       "top_origins": [
         [
           "United States",
-          6776
+          7646
         ],
         [
           "United Kingdom",
-          532
+          551
         ],
         [
           "Canada",
-          447
-        ],
-        [
-          "Turkey",
-          386
-        ],
-        [
-          "Germany",
-          347
+          473
         ],
         [
           "Ireland",
-          321
+          334
+        ],
+        [
+          "Germany",
+          308
+        ],
+        [
+          "Turkey",
+          307
         ],
         [
           "Malta",
-          300
-        ],
-        [
-          "China",
-          249
+          288
         ],
         [
           "Spain",
-          241
+          229
         ],
         [
           "France",
-          233
+          207
+        ],
+        [
+          "China",
+          186
         ]
       ],
       "sparkline": [
-        42,
-        10,
-        12,
-        73,
-        73,
-        9,
-        3,
-        12,
-        73,
+        70,
+        83,
+        79,
+        2,
+        56,
+        79,
+        53,
+        79,
         20,
+        79,
+        5,
+        21,
         57,
-        82,
-        25,
-        82,
-        82,
-        87,
-        84,
-        0,
-        48,
-        43,
-        20,
+        7,
+        72,
+        18,
+        7,
+        1,
+        72,
+        51,
+        5,
         77,
-        75,
-        61,
-        4,
+        81,
+        77,
+        34,
         13,
-        12,
-        55,
-        80,
-        5,
-        66,
-        82,
-        78,
-        38,
-        10,
-        78,
-        19,
-        57,
+        56,
+        50,
+        4,
+        29,
+        83,
+        6,
         67,
-        89,
-        66,
-        12,
-        82,
-        2,
-        2,
-        80,
+        40,
+        62,
+        4,
+        6,
         100,
-        82,
-        5,
-        32
+        7,
+        10,
+        79,
+        4,
+        85,
+        79,
+        16,
+        87,
+        77,
+        0,
+        79,
+        79
       ],
       "dream": {
-        "D": 0.1941,
+        "D": 0.1944,
         "lambda_q": 0.0,
-        "r2": 0.9926,
+        "r2": 0.9901,
         "regime": "NATURAL",
-        "verdict": "S2_LOSES",
-        "delta_aicc": 10.76,
+        "verdict": "S2_TIES",
+        "delta_aicc": 0.8,
         "best_alt": "POWER",
         "model_aicc": {
-          "S2": -946.2,
-          "EXP": -937.3,
-          "POWER": -956.9
+          "S2": -915.7,
+          "EXP": -911.2,
+          "POWER": -916.5
         },
         "retention_curve": [
           1.0,
-          0.0142,
-          0.0286,
-          0.0074,
-          -0.0044,
+          0.0205,
+          0.0151,
+          0.0049,
+          0.0005,
+          0.0117,
+          -0.0052,
+          -0.0062,
+          0.0383,
+          0.0144,
+          -0.0015,
+          0.0092,
+          -0.0074,
+          0.0094,
+          0.011,
+          0.0016,
+          0.0113,
+          -0.0147,
+          -0.0009,
+          0.019,
+          0.0035,
+          0.0007,
           0.0061,
-          -0.0032,
-          0.0123,
-          0.0202,
-          -0.0008,
-          0.0024,
-          -0.0022,
-          0.0068,
-          0.0053,
-          0.0138,
-          0.0152,
-          -0.0019,
-          0.0019,
-          0.001,
-          0.0015,
-          -0.0016,
-          -0.0069,
-          0.0077,
-          0.0253,
-          -0.0119,
-          -0.0085,
-          0.0086,
-          -0.0099,
-          0.0046,
-          0.0057
+          0.013,
+          0.0183,
+          0.0164,
+          -0.0048,
+          0.0074,
+          0.0088,
+          0.0094
         ],
         "fit_curve": [
-          0.7697,
-          0.0125,
-          0.0067,
-          0.0044,
+          0.7703,
+          0.0124,
+          0.0066,
+          0.0043,
           0.0032,
           0.0025,
           0.002,
-          0.0017,
+          0.0016,
           0.0014,
           0.0012,
-          0.0011,
+          0.001,
           0.0009,
           0.0008,
           0.0007,
           0.0007,
           0.0006,
-          0.0006,
           0.0005,
           0.0005,
+          0.0005,
           0.0004,
           0.0004,
           0.0004,
@@ -2894,7 +2894,7 @@
           0.0002,
           0.0002,
           0.0002,
-          0.0002,
+          0.0001,
           0.0001,
           0.0001,
           0.0001,
@@ -2910,7 +2910,7 @@
           0.0001
         ],
         "n_points": 100,
-        "model_note": "S2 loses to POWER (delta=10.8)"
+        "model_note": "S2 ties POWER (delta=0.8)"
       }
     },
     "news": {
@@ -2934,7 +2934,7 @@
         {
           "title": "Firefighters battle wildfire as tens of thousands evacuated near Bordeaux",
           "url": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&at_campaign=rss",
-          "date": "Sun, 26 Jul 2026 11:29:07 GMT",
+          "date": "Sun, 26 Jul 2026 15:50:41 GMT",
           "source": "BBC"
         },
         {
@@ -2980,6 +2980,36 @@
           "source": "BBC"
         },
         {
+          "title": "Senator Whitehouse: Netanyahu a ‘walking provocation’ for Americans",
+          "url": "https://www.aljazeera.com/video/the-bottom-line/2026/7/26/senator-whitehouse-netanyahu-a-walking-provocation-for-americans?traffic_source=rss",
+          "date": "Sun, 26 Jul 2026 15:26:57 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Lando Norris wins Hungarian Grand Prix for first F1 triumph in 2026",
+          "url": "https://www.aljazeera.com/sports/2026/7/26/lando-norris-wins-hungarian-grand-prix-for-first-f1-triumph-in-2026?traffic_source=rss",
+          "date": "Sun, 26 Jul 2026 15:04:12 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "More than 360,000 evacuated as wildfires rage in France and Spain",
+          "url": "https://www.aljazeera.com/news/2026/7/26/more-than-360000-evacuated-as-wildfires-rage-in-france-and-spain?traffic_source=rss",
+          "date": "Sun, 26 Jul 2026 14:49:41 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Israel carries out double tap strike in central Gaza",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/7/26/israel-carries-out-double-tap-strike-in-central-gaza?traffic_source=rss",
+          "date": "Sun, 26 Jul 2026 14:47:02 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Tunisia grapples with five years of crisis since Saied’s power grab",
+          "url": "https://www.aljazeera.com/economy/2026/7/26/tunisia-grapples-with-five-years-of-crisis-since-saieds-power-grab?traffic_source=rss",
+          "date": "Sun, 26 Jul 2026 14:39:30 +0000",
+          "source": "Al Jazeera"
+        },
+        {
           "title": "Senegal’s Faye launches a new party, formalising his split with Sonko",
           "url": "https://www.aljazeera.com/news/2026/7/26/senegals-faye-launches-a-new-party-formalising-his-split-with-sonko?traffic_source=rss",
           "date": "Sun, 26 Jul 2026 14:22:03 +0000",
@@ -3008,36 +3038,6 @@
           "url": "https://www.aljazeera.com/news/2026/7/26/yemens-health-workers-race-to-halt-latest-outbreak-of-deadly-dengue-fever?traffic_source=rss",
           "date": "Sun, 26 Jul 2026 13:39:17 +0000",
           "source": "Al Jazeera"
-        },
-        {
-          "title": "From paradise to ‘pilot zone’ disaster: Returning to destroyed Lebanon home",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/7/26/from-paradise-to-pilot-zone-disaster-returning-to-destroyed-lebanon-home?traffic_source=rss",
-          "date": "Sun, 26 Jul 2026 13:34:45 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Why are Israeli settlers on a rampage in the occupied West Bank?",
-          "url": "https://www.aljazeera.com/news/2026/7/26/why-are-israeli-settlers-on-a-rampage-in-the-occupied-west-bank?traffic_source=rss",
-          "date": "Sun, 26 Jul 2026 13:31:04 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Langton released from hospital after concussion at Commonwealth Games",
-          "url": "https://www.aljazeera.com/sports/2026/7/26/langton-released-from-hospital-after-concussion-at-commonwealth-games?traffic_source=rss",
-          "date": "Sun, 26 Jul 2026 13:30:32 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "‘New education minister can’t bring my dead daughter back’",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/7/26/new-education-minister-cant-bring-my-dead-daughter?traffic_source=rss",
-          "date": "Sun, 26 Jul 2026 13:26:17 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "What next for India’s ‘Cockroach’ movement after education minister sacked",
-          "url": "https://www.aljazeera.com/news/2026/7/26/what-next-for-indias-cockroach-movement-after-education-minister-sacked?traffic_source=rss",
-          "date": "Sun, 26 Jul 2026 13:15:01 +0000",
-          "source": "Al Jazeera"
         }
       ]
     },
@@ -3048,9 +3048,9 @@
       "cities": [
         {
           "city": "New York",
-          "temp": 25,
-          "wind": 8,
-          "humidity": 48,
+          "temp": 28,
+          "wind": 5,
+          "humidity": 38,
           "precip": 0.0,
           "lat": 40.71,
           "lon": -74.01
@@ -3058,17 +3058,17 @@
         {
           "city": "London",
           "temp": 25,
-          "wind": 19,
-          "humidity": 36,
+          "wind": 20,
+          "humidity": 37,
           "precip": 0.0,
           "lat": 51.51,
           "lon": -0.13
         },
         {
           "city": "Tokyo",
-          "temp": 26,
+          "temp": 25,
           "wind": 3,
-          "humidity": 95,
+          "humidity": 94,
           "precip": 0.0,
           "lat": 35.68,
           "lon": 139.69
@@ -3076,7 +3076,7 @@
         {
           "city": "Moscow",
           "temp": 18,
-          "wind": 8,
+          "wind": 6,
           "humidity": 85,
           "precip": 0.0,
           "lat": 55.76,
@@ -3084,27 +3084,27 @@
         },
         {
           "city": "Beijing",
-          "temp": 27,
-          "wind": 7,
-          "humidity": 87,
-          "precip": 0.0,
+          "temp": 26,
+          "wind": 6,
+          "humidity": 90,
+          "precip": 0.1,
           "lat": 39.9,
           "lon": 116.4
         },
         {
           "city": "Mumbai",
-          "temp": 25,
-          "wind": 12,
-          "humidity": 95,
-          "precip": 0.8,
+          "temp": 24,
+          "wind": 11,
+          "humidity": 96,
+          "precip": 1.7,
           "lat": 19.08,
           "lon": 72.88
         },
         {
           "city": "Sao Paulo",
-          "temp": 19,
-          "wind": 1,
-          "humidity": 66,
+          "temp": 22,
+          "wind": 3,
+          "humidity": 52,
           "precip": 0.0,
           "lat": -23.55,
           "lon": -46.63
@@ -3112,53 +3112,53 @@
         {
           "city": "Sydney",
           "temp": 9,
-          "wind": 10,
-          "humidity": 86,
+          "wind": 8,
+          "humidity": 84,
           "precip": 0.0,
           "lat": -33.87,
           "lon": 151.21
         },
         {
           "city": "Cairo",
-          "temp": 33,
-          "wind": 9,
-          "humidity": 36,
+          "temp": 32,
+          "wind": 10,
+          "humidity": 37,
           "precip": 0.0,
           "lat": 30.04,
           "lon": 31.24
         },
         {
           "city": "Lagos",
-          "temp": 28,
+          "temp": 27,
           "wind": 15,
-          "humidity": 75,
+          "humidity": 80,
           "precip": 0.0,
           "lat": 6.52,
           "lon": 3.38
         },
         {
-          "city": "Dubai",
-          "temp": 36,
-          "wind": 8,
-          "humidity": 53,
-          "precip": 0.0,
-          "lat": 25.2,
-          "lon": 55.27
-        },
-        {
           "city": "Singapore",
-          "temp": 25,
-          "wind": 3,
-          "humidity": 88,
+          "temp": 26,
+          "wind": 2,
+          "humidity": 86,
           "precip": 0.0,
           "lat": 1.35,
           "lon": 103.82
         },
         {
+          "city": "Berlin",
+          "temp": 22,
+          "wind": 4,
+          "humidity": 72,
+          "precip": 0.0,
+          "lat": 52.52,
+          "lon": 13.4
+        },
+        {
           "city": "Paris",
-          "temp": 24,
-          "wind": 19,
-          "humidity": 55,
+          "temp": 25,
+          "wind": 15,
+          "humidity": 51,
           "precip": 0.0,
           "lat": 48.85,
           "lon": 2.35
@@ -3166,28 +3166,28 @@
         {
           "city": "Istanbul",
           "temp": 26,
-          "wind": 5,
-          "humidity": 52,
+          "wind": 4,
+          "humidity": 44,
           "precip": 0.0,
           "lat": 41.01,
           "lon": 28.98
         }
       ],
       "sparkline": [
-        59,
-        59,
-        63,
-        33,
-        67,
-        59,
-        37,
-        0,
-        89,
+        83,
         70,
+        70,
+        39,
+        74,
+        65,
+        57,
+        0,
         100,
-        59,
-        56,
-        63
+        78,
+        74,
+        57,
+        70,
+        74
       ],
       "dream": {
         "D": 1.425,
@@ -3301,14 +3301,14 @@
           "date": "2026-07-25T21:08:51+00:00"
         },
         {
-          "title": "Brazil denies visas to U.S. officials who aimed to impugn electoral system | The U.S. delegation had",
-          "url": "https://www.reddit.com/r/worldnews/comments/1v6b5je/brazil_denies_visas_to_us_officials_who_aimed_to/",
-          "date": "2026-07-25T15:21:49+00:00"
-        },
-        {
           "title": "President Trump holds off major Iran escalation after Pentagon warns of interceptor shortage",
           "url": "https://www.reddit.com/r/worldnews/comments/1v6oh33/president_trump_holds_off_major_iran_escalation/",
           "date": "2026-07-26T00:20:47+00:00"
+        },
+        {
+          "title": "Trump admin fumes after Brazil kicks out US officials over election meddling fears: report",
+          "url": "https://www.reddit.com/r/worldnews/comments/1v73im9/trump_admin_fumes_after_brazil_kicks_out_us/",
+          "date": "2026-07-26T13:10:55+00:00"
         },
         {
           "title": "Zelenskyy warns of 'massive' Russian attack within 48 hours",
@@ -3331,11 +3331,6 @@
           "date": "2026-07-26T07:45:59+00:00"
         },
         {
-          "title": "Trump admin fumes after Brazil kicks out US officials over election meddling fears: report",
-          "url": "https://www.reddit.com/r/worldnews/comments/1v73im9/trump_admin_fumes_after_brazil_kicks_out_us/",
-          "date": "2026-07-26T13:10:55+00:00"
-        },
-        {
           "title": "Ukraine's Zelenskiy: Russia wants to bring in 30,000 North Korean troops to take part in its more th",
           "url": "https://www.reddit.com/r/worldnews/comments/1v6jc7s/ukraines_zelenskiy_russia_wants_to_bring_in_30000/",
           "date": "2026-07-25T20:40:48+00:00"
@@ -3344,6 +3339,11 @@
           "title": "Van slams into people gathered for Berlin's LGBTQ+ event, killing 1 and injuring at least 15",
           "url": "https://www.reddit.com/r/worldnews/comments/1v6mwy1/van_slams_into_people_gathered_for_berlins_lgbtq/",
           "date": "2026-07-25T23:11:05+00:00"
+        },
+        {
+          "title": "World's first octopus farm halted in Spain",
+          "url": "https://www.reddit.com/r/worldnews/comments/1v70g49/worlds_first_octopus_farm_halted_in_spain/",
+          "date": "2026-07-26T10:45:37+00:00"
         },
         {
           "title": "Putin preparing to send more Russians to war' — Zelensky warns of mobilization, reveals figures show",
@@ -3361,14 +3361,14 @@
           "date": "2026-07-26T06:45:16+00:00"
         },
         {
-          "title": "World's first octopus farm halted in Spain",
-          "url": "https://www.reddit.com/r/worldnews/comments/1v70g49/worlds_first_octopus_farm_halted_in_spain/",
-          "date": "2026-07-26T10:45:37+00:00"
-        },
-        {
           "title": "UK set for fourth heatwave next week",
           "url": "https://www.reddit.com/r/worldnews/comments/1v6fo5q/uk_set_for_fourth_heatwave_next_week/",
           "date": "2026-07-25T18:17:13+00:00"
+        },
+        {
+          "title": "Russian central bank cuts GDP growth forecast to zero, expects faster inflation",
+          "url": "https://www.reddit.com/r/worldnews/comments/1v6yfid/russian_central_bank_cuts_gdp_growth_forecast_to/",
+          "date": "2026-07-26T08:55:00+00:00"
         }
       ]
     },
@@ -3379,147 +3379,147 @@
       "count": 30,
       "edits": [
         {
-          "title": "User talk:MarcusAbacus",
-          "user": "Jonesey95",
-          "time": "2026-07-26T14:38:48Z",
-          "size": 9536
+          "title": "Wikipedia:Administrator intervention against vandalism",
+          "user": "Apparition11",
+          "time": "2026-07-26T16:04:01Z",
+          "size": 2171
         },
         {
-          "title": "Little Martha",
-          "user": "~2026-34448-29",
-          "time": "2026-07-26T14:38:47Z",
-          "size": 5032
+          "title": "Lake Aylmer",
+          "user": "Zackmann08",
+          "time": "2026-07-26T16:03:59Z",
+          "size": 2823
         },
         {
-          "title": "Tommy Eytle",
-          "user": "CutlassBot",
-          "time": "2026-07-26T14:38:47Z",
-          "size": 9514
+          "title": "Music of Missouri",
+          "user": "MeeBeeTheeKeenEDITEE",
+          "time": "2026-07-26T16:03:57Z",
+          "size": 22905
         },
         {
-          "title": "Template:2026 PVL on Tour results table",
-          "user": "Jonesey95",
-          "time": "2026-07-26T14:38:47Z",
-          "size": 1880
+          "title": "Zhytkavichy",
+          "user": "WPbloggerka",
+          "time": "2026-07-26T16:03:56Z",
+          "size": 6412
         },
         {
-          "title": "Indian cricket team in Zimbabwe in 2026",
-          "user": "MNWiki845",
-          "time": "2026-07-26T14:38:46Z",
-          "size": 8326
+          "title": "Lake Aygır (Trabzon)",
+          "user": "Zackmann08",
+          "time": "2026-07-26T16:03:56Z",
+          "size": 1816
         },
         {
-          "title": "List of State Register of Heritage Places in the City of Belmont",
-          "user": "Calistemon",
-          "time": "2026-07-26T14:38:46Z",
-          "size": 4785
+          "title": "Mindreaders",
+          "user": "~2026-40790-13",
+          "time": "2026-07-26T16:03:56Z",
+          "size": 7184
         },
         {
-          "title": "Zelyonka attack",
-          "user": "Altenmann",
-          "time": "2026-07-26T14:38:45Z",
-          "size": 12706
+          "title": "Khalifa bin Zayed Al Nahyan",
+          "user": "MarketFruit",
+          "time": "2026-07-26T16:03:55Z",
+          "size": 48389
         },
         {
-          "title": "Dillon Francis",
-          "user": "Myndranius",
-          "time": "2026-07-26T14:38:44Z",
-          "size": 16494
+          "title": "Bajaga",
+          "user": "Guest 290758",
+          "time": "2026-07-26T16:03:55Z",
+          "size": 11418
         },
         {
-          "title": "American Dream (disambiguation)",
-          "user": "~2026-39933-05",
-          "time": "2026-07-26T14:38:44Z",
-          "size": 4601
+          "title": "Bolevec Disaster",
+          "user": "12ozcan",
+          "time": "2026-07-26T16:03:55Z",
+          "size": 9158
         },
         {
-          "title": "Barry Knight (referee)",
-          "user": "CutlassBot",
-          "time": "2026-07-26T14:38:44Z",
-          "size": 8744
+          "title": "Malcolm Lee (basketball)",
+          "user": "~2026-41088-48",
+          "time": "2026-07-26T16:03:55Z",
+          "size": 20936
         },
         {
-          "title": "User:Stanloona2020/sandbox",
-          "user": "Stanloona2020",
-          "time": "2026-07-26T14:38:43Z",
-          "size": 6952
+          "title": "Lake Aygır (Kars)",
+          "user": "Zackmann08",
+          "time": "2026-07-26T16:03:53Z",
+          "size": 1924
         },
         {
-          "title": "2026–27 Burnley F.C. season",
-          "user": "Alibene567",
-          "time": "2026-07-26T14:38:42Z",
-          "size": 30689
+          "title": "Stuart Scheftel",
+          "user": "PequodOnStationAtLZ",
+          "time": "2026-07-26T16:03:53Z",
+          "size": 18073
         },
         {
-          "title": "Artemis V",
-          "user": "LightlySeared",
-          "time": "2026-07-26T14:38:42Z",
-          "size": 7480
+          "title": "Shea's Performing Arts Center",
+          "user": "BrechtBro",
+          "time": "2026-07-26T16:03:53Z",
+          "size": 12043
         },
         {
-          "title": "Orlando, Florida",
-          "user": "~2026-41777-35",
-          "time": "2026-07-26T14:38:41Z",
-          "size": 152600
+          "title": "Lake Aygır (Erzurum)",
+          "user": "Zackmann08",
+          "time": "2026-07-26T16:03:50Z",
+          "size": 1910
         },
         {
-          "title": "Mikayla Pivec",
-          "user": "DaHuzyBru",
-          "time": "2026-07-26T14:38:40Z",
-          "size": 18211
+          "title": "List of Malaysian State Assembly Representatives (2013–2018)",
+          "user": "微肿头龙",
+          "time": "2026-07-26T16:03:49Z",
+          "size": 187590
         },
         {
-          "title": "Tirana International Airport Nënë Tereza",
-          "user": "~2026-40281-70",
-          "time": "2026-07-26T14:38:39Z",
-          "size": 80010
+          "title": "User talk:Sameermurtaza11",
+          "user": "DoubleGrazing",
+          "time": "2026-07-26T16:03:48Z",
+          "size": 15910
         },
         {
-          "title": "Khorasani Turkic",
-          "user": "CutlassBot",
-          "time": "2026-07-26T14:38:39Z",
-          "size": 20054
+          "title": "Amy L. Bondurant",
+          "user": "Sam Sailor",
+          "time": "2026-07-26T16:03:47Z",
+          "size": 7357
         },
         {
-          "title": "The Unaccountability Machine",
-          "user": "JimKillock",
-          "time": "2026-07-26T14:38:39Z",
-          "size": 6578
+          "title": "Wikipedia:Did you know/DYK hook count",
+          "user": "GalliumBot",
+          "time": "2026-07-26T16:03:46Z",
+          "size": 11435
         },
         {
-          "title": "George Coldham",
-          "user": "The Green Star Collector",
-          "time": "2026-07-26T14:38:38Z",
-          "size": 2487
+          "title": "Lake Aygır",
+          "user": "Zackmann08",
+          "time": "2026-07-26T16:03:46Z",
+          "size": 2726
         },
         {
-          "title": "User talk:Abdirahman.o",
-          "user": "Abdirahman.o",
-          "time": "2026-07-26T14:38:38Z",
-          "size": 489
+          "title": "Draft:Toni Bryant",
+          "user": "Butters.From.SouthPark",
+          "time": "2026-07-26T16:03:46Z",
+          "size": 4124
         }
       ],
       "sparkline": [
-        6,
-        3,
-        6,
+        0,
         1,
-        5,
-        3,
-        8,
         11,
+        2,
+        0,
+        3,
+        25,
+        5,
+        4,
+        10,
+        0,
+        9,
+        6,
+        0,
+        100,
+        8,
         3,
         5,
-        4,
-        20,
-        5,
-        100,
-        12,
-        52,
-        13,
-        4,
-        1,
-        0
+        0,
+        1
       ],
       "dream": null
     },
@@ -3530,91 +3530,91 @@
       "count": 12,
       "stories": [
         {
-          "title": "Ruff v0.16.0 – Significant new updates – 413 default rules up from 59",
-          "url": "https://astral.sh/blog/ruff-v0.16.0",
-          "score": 207,
-          "comments": 121
+          "title": "Park by Robot at London Gatwick Airport",
+          "url": "https://aerospaceglobalnews.com/news/gatwick-airport-robotic-parking-stanley-robotics/",
+          "score": 61,
+          "comments": 30
         },
         {
           "title": "Go Analysis Framework: modular static analysis by go team",
           "url": "https://pkg.go.dev/golang.org/x/tools/go/analysis",
-          "score": 61,
+          "score": 99,
           "comments": 7
+        },
+        {
+          "title": "Ruff v0.16.0 – Significant new updates – 413 default rules up from 59",
+          "url": "https://astral.sh/blog/ruff-v0.16.0",
+          "score": 251,
+          "comments": 148
+        },
+        {
+          "title": "Kill The Cookie Banner",
+          "url": "https://killthecookiebanner.eu/",
+          "score": 77,
+          "comments": 34
+        },
+        {
+          "title": "An Inside Look at the Token Reseller Market",
+          "url": "https://vectoral.com/blog/token-relay-market",
+          "score": 10,
+          "comments": 1
         },
         {
           "title": "Google Discloses $94.1B in SpaceX Stock, Marking 6% Stake",
           "url": "https://www.wsj.com/tech/google-discloses-94-1-billion-in-spacex-stock-marking-6-stake-91655d7c",
-          "score": 120,
-          "comments": 62
+          "score": 187,
+          "comments": 127
         },
         {
           "title": "GrapheneOS protections against data extraction from locked devices",
           "url": "https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices",
-          "score": 214,
-          "comments": 114
+          "score": 259,
+          "comments": 128
         },
         {
           "title": "I learned PCB design, 3D printing and C just to listen to music",
           "url": "https://pentaton.app/blog/2026-07-12-introducing-pentaton-lp/",
-          "score": 45,
-          "comments": 4
+          "score": 78,
+          "comments": 9
         },
         {
-          "title": "A shell colon does nothing. Use it anyway",
-          "url": "https://refp.se/articles/your-shell-and-the-magic-colon",
-          "score": 302,
-          "comments": 124
+          "title": "Make an Origami Circuit Board",
+          "url": "https://spectrum.ieee.org/origami-circuit-boards",
+          "score": 4,
+          "comments": 0
         },
         {
-          "title": "Third Drone Shot Down in Three Days in Romanian Territory",
-          "url": "https://english.mapn.ro/",
-          "score": 142,
-          "comments": 130
+          "title": "Design Is Compromise",
+          "url": "https://stephango.com/design-is-compromise",
+          "score": 3,
+          "comments": 0
         },
         {
           "title": "What's Under Your Feet in New York City?",
           "url": "https://practical.engineering/blog/2026/7/21/whats-under-your-feet-in-new-york-city",
-          "score": 16,
-          "comments": 0
+          "score": 59,
+          "comments": 8
         },
         {
-          "title": "The new rules of context engineering for Claude 5 generation models",
-          "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
-          "score": 398,
-          "comments": 291
-        },
-        {
-          "title": "An ESP32 based plane radar for my desk",
-          "url": "https://blog.ktz.me/esp32-plane-radar/",
-          "score": 207,
-          "comments": 41
-        },
-        {
-          "title": "Ask HN: What are the most promising RL fields for a new master student?",
-          "url": "",
-          "score": 16,
-          "comments": 2
-        },
-        {
-          "title": "DeepSeek pause fundraise after comments on compute gap to US leaked (transcript)",
-          "url": "https://github.com/demo-zexuan/liang-wenfeng-investor-meeting-2026-7-22/blob/master/%E6%A2%81%E6%96%87%E9%94%8B%E6%8A%95%E8%B5%84%E8%80%85%E4%BA%A4%E6%B5%81%E4%BC%9A-%E6%96%87%E5%AD%97%E7%A8%BF_1_18_translate_20260723201651.pdf",
-          "score": 200,
-          "comments": 159
+          "title": "The New AI Superpowers: Focus and Followthrough",
+          "url": "https://www.rickmanelius.com/p/the-new-ai-superpowers-focus-and",
+          "score": 20,
+          "comments": 6
         }
       ],
       "sparkline": [
-        50,
-        12,
-        27,
-        52,
-        8,
-        75,
-        33,
-        0,
+        23,
+        38,
+        97,
+        29,
+        3,
+        72,
         100,
-        50,
+        29,
         0,
-        48
+        0,
+        22,
+        7
       ],
       "dream": null
     },
@@ -3626,70 +3626,70 @@
       "repos": [
         {
           "name": "codecrafters-io/build-your-own-x",
-          "stars": 531728,
+          "stars": 531747,
           "lang": "Markdown",
           "desc": "Master programming by recreating your favorite technologies from scratch.",
           "url": "https://github.com/codecrafters-io/build-your-own-x"
         },
         {
           "name": "sindresorhus/awesome",
-          "stars": 489236,
+          "stars": 489259,
           "lang": null,
           "desc": "😎 Awesome lists about all kinds of interesting topics",
           "url": "https://github.com/sindresorhus/awesome"
         },
         {
           "name": "freeCodeCamp/freeCodeCamp",
-          "stars": 452866,
+          "stars": 452872,
           "lang": "TypeScript",
           "desc": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming,",
           "url": "https://github.com/freeCodeCamp/freeCodeCamp"
         },
         {
           "name": "public-apis/public-apis",
-          "stars": 452612,
+          "stars": 452623,
           "lang": "Python",
           "desc": "A collective list of free APIs",
           "url": "https://github.com/public-apis/public-apis"
         },
         {
           "name": "EbookFoundation/free-programming-books",
-          "stars": 393051,
+          "stars": 393059,
           "lang": "Python",
           "desc": ":books: Freely available programming books",
           "url": "https://github.com/EbookFoundation/free-programming-books"
         },
         {
           "name": "openclaw/openclaw",
-          "stars": 384191,
+          "stars": 384200,
           "lang": "TypeScript",
           "desc": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
           "url": "https://github.com/openclaw/openclaw"
         },
         {
           "name": "nilbuild/developer-roadmap",
-          "stars": 362743,
+          "stars": 362752,
           "lang": "TypeScript",
           "desc": "Interactive roadmaps, guides and other educational content to help developers gr",
           "url": "https://github.com/nilbuild/developer-roadmap"
         },
         {
           "name": "donnemartin/system-design-primer",
-          "stars": 359235,
+          "stars": 359244,
           "lang": "Python",
           "desc": "Learn how to design large-scale systems. Prep for the system design interview.  ",
           "url": "https://github.com/donnemartin/system-design-primer"
         },
         {
           "name": "jwasham/coding-interview-university",
-          "stars": 357175,
+          "stars": 357179,
           "lang": null,
           "desc": "A complete computer science study plan to become a software engineer.",
           "url": "https://github.com/jwasham/coding-interview-university"
         },
         {
           "name": "vinta/awesome-python",
-          "stars": 310432,
+          "stars": 310445,
           "lang": "Python",
           "desc": "An opinionated list of Python frameworks, libraries, tools, and resources",
           "url": "https://github.com/vinta/awesome-python"
