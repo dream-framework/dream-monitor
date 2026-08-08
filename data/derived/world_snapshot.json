@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-08T18:40:48.781816+00:00",
+  "generated_at": "2026-08-08T19:32:16.159528+00:00",
   "feeds": {
     "earthquakes": {
       "name": "Earthquakes",
       "category": "geophysical",
       "status": "ok",
-      "count": 87,
+      "count": 89,
       "latest": [
         {
           "mag": 5.6,
@@ -73,11 +73,27 @@
         },
         {
           "mag": 4.7,
+          "lat": -28.5661,
+          "lon": -176.5182,
+          "depth": 10.0,
+          "place": "Kermadec Islands region",
+          "time": "2026-08-08T19:07:57.041Z"
+        },
+        {
+          "mag": 4.7,
           "lat": -12.1235,
           "lon": -75.5241,
           "depth": 10.0,
           "place": "17 km WNW of Yanacancha, Peru",
           "time": "2026-08-07T23:11:23.416Z"
+        },
+        {
+          "mag": 4.6,
+          "lat": -10.5042,
+          "lon": 165.4256,
+          "depth": 75.441,
+          "place": "47 km WNW of Lata, Solomon Islands",
+          "time": "2026-08-08T18:28:26.011Z"
         },
         {
           "mag": 4.6,
@@ -184,32 +200,18 @@
           "time": "2026-08-08T01:32:33.870Z"
         },
         {
-          "mag": 4.2,
-          "lat": 36.7231,
-          "lon": 140.68,
-          "depth": 10.0,
-          "place": "3 km WNW of Takahagi, Japan",
-          "time": "2026-08-07T18:41:31.903Z"
-        },
-        {
           "mag": 3.6,
           "lat": 51.676,
           "lon": -171.203,
           "depth": 7.2,
           "place": "212 km SW of Nikolski, Alaska",
           "time": "2026-08-08T06:13:55.686Z"
-        },
-        {
-          "mag": 3.4,
-          "lat": 54.939,
-          "lon": -157.682,
-          "depth": 20.0,
-          "place": "142 km SE of Perryville, Alaska",
-          "time": "2026-08-08T13:00:14.893Z"
         }
       ],
       "max_mag": 5.6,
       "sparkline": [
+        17,
+        25,
         6,
         0,
         61,
@@ -257,45 +259,44 @@
         8,
         0,
         69,
-        6,
-        6,
-        61
+        6
       ],
       "dream": {
-        "D": 9.9983,
+        "D": 9.9981,
         "lambda_q": 0.0,
-        "r2": 0.8602,
+        "r2": 0.8242,
         "regime": "EXTRACTION",
         "verdict": "S2_LOSES",
-        "delta_aicc": 2.75,
+        "delta_aicc": 2.7,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -95.8,
-          "EXP": -98.5,
-          "POWER": -98.3
+          "S2": -95.9,
+          "EXP": -98.6,
+          "POWER": -98.5
         },
         "retention_curve": [
           1.0,
-          -0.075,
-          0.0083,
-          -0.0023,
-          0.1462,
-          -0.1071,
-          -0.0558,
-          -0.0326,
-          0.0235,
-          -0.194,
-          -0.0042,
-          -0.0713,
-          -0.0706,
-          0.0327,
-          0.0814,
-          0.0878,
-          0.0505,
-          0.2078,
-          0.0253,
-          -0.0354,
-          0.0154
+          -0.107,
+          0.0984,
+          -0.0653,
+          0.1682,
+          -0.1474,
+          -0.0381,
+          -0.0347,
+          0.0379,
+          -0.1964,
+          -0.028,
+          -0.0821,
+          -0.0434,
+          0.0148,
+          0.0567,
+          0.097,
+          0.0577,
+          0.1887,
+          0.0387,
+          -0.0323,
+          -0.0151,
+          0.139
         ],
         "fit_curve": [
           1.0,
@@ -349,7 +350,7 @@
           0.0,
           0.0
         ],
-        "n_points": 21,
+        "n_points": 22,
         "model_note": "S2 loses to EXP (delta=2.7)"
       }
     },
@@ -2717,181 +2718,173 @@
       "name": "Flights",
       "category": "aviation",
       "status": "ok",
-      "count": 11809,
+      "count": 10939,
       "bands": {
-        "N Hemisphere": 10797,
-        "S Hemisphere": 131,
-        "Tropics": 800
+        "N Hemisphere": 9933,
+        "S Hemisphere": 156,
+        "Tropics": 770
       },
       "top_origins": [
         [
           "United States",
-          6640
-        ],
-        [
-          "United Kingdom",
-          476
+          6000
         ],
         [
           "Canada",
-          469
+          426
+        ],
+        [
+          "United Kingdom",
+          419
         ],
         [
           "Turkey",
-          352
+          355
         ],
         [
           "Ireland",
-          345
-        ],
-        [
-          "Germany",
-          285
+          319
         ],
         [
           "Malta",
-          264
+          276
         ],
         [
           "Spain",
           215
         ],
         [
-          "France",
-          191
+          "Germany",
+          212
         ],
         [
-          "Brazil",
-          149
+          "France",
+          189
+        ],
+        [
+          "United Arab Emirates",
+          148
         ]
       ],
       "sparkline": [
-        88,
-        7,
-        93,
+        24,
+        91,
+        15,
+        0,
+        70,
         1,
+        30,
+        80,
+        70,
+        7,
+        3,
         5,
         37,
-        11,
+        52,
         80,
-        6,
-        80,
-        13,
-        83,
-        83,
-        93,
-        50,
-        13,
-        22,
-        3,
-        66,
-        100,
-        16,
-        34,
+        9,
+        1,
+        62,
         78,
-        17,
-        88,
-        90,
-        88,
-        56,
-        31,
-        88,
+        84,
+        72,
         100,
-        73,
-        48,
-        38,
-        30,
-        93,
-        56,
+        84,
+        42,
         19,
-        10,
-        76,
-        0,
-        7,
-        59,
-        4,
-        61,
-        16,
-        56,
-        2,
+        82,
         3,
-        11
+        75,
+        59,
+        78,
+        61,
+        75,
+        33,
+        40,
+        0,
+        78,
+        2,
+        1,
+        49,
+        18,
+        77,
+        26,
+        49,
+        59,
+        69,
+        78,
+        52,
+        73,
+        87,
+        1
       ],
       "dream": {
-        "D": 0.1928,
+        "D": 0.1991,
         "lambda_q": 0.0,
-        "r2": 0.9924,
+        "r2": 0.9893,
         "regime": "NATURAL",
         "verdict": "S2_WINS",
-        "delta_aicc": -8.42,
-        "best_alt": "POWER",
+        "delta_aicc": -5.88,
+        "best_alt": "EXP",
         "model_aicc": {
-          "S2": -942.1,
-          "EXP": -925.1,
-          "POWER": -933.7
+          "S2": -907.7,
+          "EXP": -901.8,
+          "POWER": -900.4
         },
         "retention_curve": [
           1.0,
-          0.0346,
-          0.015,
-          -0.0077,
-          -0.004,
-          0.0242,
-          0.0117,
-          0.002,
-          0.0014,
-          0.0136,
-          0.0012,
-          0.0049,
-          0.0123,
-          -0.0147,
-          0.0137,
-          0.008,
-          0.0049,
-          -0.0013,
-          0.0098,
-          0.004,
-          0.0154,
-          0.0139,
-          -0.0224,
-          0.0069,
-          0.0047,
-          0.0154,
+          0.0163,
+          0.0114,
+          0.0063,
+          0.0159,
+          0.0151,
+          0.0058,
+          0.0063,
+          0.0211,
+          -0.0025,
+          0.0064,
+          0.0119,
+          -0.0141,
+          0.0004,
+          0.0201,
+          0.0143,
+          0.0015,
+          -0.0047,
+          0.025,
           0.0141,
-          -0.0019,
-          -0.0077,
-          -0.0003
+          -0.0125,
+          -0.009,
+          0.0035,
+          -0.0063,
+          -0.0038,
+          -0.0056,
+          0.0072,
+          -0.0046,
+          0.007,
+          -0.0061
         ],
         "fit_curve": [
-          0.7679,
-          0.0131,
-          0.007,
-          0.0047,
+          0.7766,
+          0.0106,
+          0.0054,
           0.0035,
-          0.0027,
-          0.0022,
-          0.0018,
+          0.0025,
+          0.0019,
           0.0015,
-          0.0013,
           0.0012,
           0.001,
           0.0009,
-          0.0008,
           0.0007,
           0.0007,
-          0.0006,
           0.0006,
           0.0005,
           0.0005,
           0.0004,
           0.0004,
-          0.0004,
-          0.0004,
           0.0003,
           0.0003,
           0.0003,
           0.0003,
-          0.0003,
           0.0002,
           0.0002,
           0.0002,
@@ -2899,10 +2892,18 @@
           0.0002,
           0.0002,
           0.0002,
-          0.0002,
-          0.0002,
-          0.0002,
-          0.0002,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
           0.0001,
           0.0001,
           0.0001,
@@ -2915,7 +2916,7 @@
           0.0001
         ],
         "n_points": 100,
-        "model_note": "S2 beats POWER (delta=-8.4)"
+        "model_note": "S2 beats EXP (delta=-5.9)"
       }
     },
     "news": {
@@ -2924,6 +2925,12 @@
       "status": "ok",
       "count": 20,
       "articles": [
+        {
+          "title": "Hormuz talks positive, Oman says, as Iran warns deal would not open strait",
+          "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o?at_medium=RSS&at_campaign=rss",
+          "date": "Sat, 08 Aug 2026 19:18:57 GMT",
+          "source": "BBC"
+        },
         {
           "title": "Trump's ex-lawyer Todd Blanche narrowly confirmed as US attorney general",
           "url": "https://www.bbc.co.uk/news/articles/cewr898jy8go?at_medium=RSS&at_campaign=rss",
@@ -2955,15 +2962,15 @@
           "source": "BBC"
         },
         {
-          "title": "Child among three killed in Russian missile attacks near Kyiv",
-          "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
-          "date": "Sat, 08 Aug 2026 18:06:25 GMT",
-          "source": "BBC"
-        },
-        {
           "title": "Watch: Moment opposition MP throws eggs at Kosovo's acting PM",
           "url": "https://www.bbc.co.uk/news/videos/cvg8je12xxeo?at_medium=RSS&at_campaign=rss",
           "date": "Sat, 08 Aug 2026 15:59:37 GMT",
+          "source": "BBC"
+        },
+        {
+          "title": "Child among three killed in Russian missile attacks near Kyiv",
+          "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
+          "date": "Sat, 08 Aug 2026 18:06:25 GMT",
           "source": "BBC"
         },
         {
@@ -2979,10 +2986,34 @@
           "source": "BBC"
         },
         {
-          "title": "Thai PM vows to introduce stricter gun laws after eight killed in shooting",
-          "url": "https://www.bbc.co.uk/news/articles/cdewx6rew04o?at_medium=RSS&at_campaign=rss",
-          "date": "Fri, 07 Aug 2026 21:19:27 GMT",
-          "source": "BBC"
+          "title": "At least 200 people evacuated as wildfire rages near Lake Garda",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/at-least-200-people-evacuated-as-wildfire-rages-near-lake-garda?traffic_source=rss",
+          "date": "Sat, 08 Aug 2026 19:13:03 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Lebanese soldiers injured while Israeli troops intrude on southern town",
+          "url": "https://www.aljazeera.com/news/2026/8/8/lebanese-soldiers-injured-while-israeli-troops-intrude-on-southern-town?traffic_source=rss",
+          "date": "Sat, 08 Aug 2026 19:00:43 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "US slams Chinese ‘nature reserve’ as effort to claim South China Sea",
+          "url": "https://www.aljazeera.com/news/2026/8/8/us-slams-chinese-nature-reserve-as-effort-to-claim-south-china-sea?traffic_source=rss",
+          "date": "Sat, 08 Aug 2026 18:57:53 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "‘Debilitating’: Hunter Biden speaks out about father Joe Biden’s cancer",
+          "url": "https://www.aljazeera.com/news/2026/8/8/debilitating-hunter-biden-speaks-out-about-father-joe-bidens-cancer?traffic_source=rss",
+          "date": "Sat, 08 Aug 2026 18:55:20 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Yemen’s government forces attack Houthis amid renewed shelling of Marib",
+          "url": "https://www.aljazeera.com/news/2026/8/8/yemens-government-forces-attack-houthis-amid-renewed-shelling-of-marib?traffic_source=rss",
+          "date": "Sat, 08 Aug 2026 18:43:20 +0000",
+          "source": "Al Jazeera"
         },
         {
           "title": "The influencers taking on far-right leader Nigel Farage",
@@ -3013,36 +3044,6 @@
           "url": "https://www.aljazeera.com/news/2026/8/8/saudi-pakistan-turkiye-pact-a-new-shield-or-strategic-signal?traffic_source=rss",
           "date": "Sat, 08 Aug 2026 16:52:11 +0000",
           "source": "Al Jazeera"
-        },
-        {
-          "title": "Which stars need to shine this season: Real Madrid, Barcelona, Man Utd, PSG",
-          "url": "https://www.aljazeera.com/sports/2026/8/8/which-stars-need-to-shine-this-season-real-madrid-barcelona-man-utd-psg?traffic_source=rss",
-          "date": "Sat, 08 Aug 2026 16:26:36 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Opposition MP hurls eggs at Kosovo Prime Minister",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/opposition-mp-hurls-eggs-at-kosovo-prime-minister?traffic_source=rss",
-          "date": "Sat, 08 Aug 2026 16:09:06 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "UNRWA has been with me since birth, I cannot imagine a future without it",
-          "url": "https://www.aljazeera.com/features/2026/8/8/unrwa-has-been-with-me-since-birth-i-cannot-imagine-a-future-without-it?traffic_source=rss",
-          "date": "Sat, 08 Aug 2026 15:52:49 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Lebanon ‘detains’ former al-Assad-era general, weighs handing him to Syria",
-          "url": "https://www.aljazeera.com/news/2026/8/8/lebanon-detains-former-al-assad-era-general-weighs-handing-him-to-syria?traffic_source=rss",
-          "date": "Sat, 08 Aug 2026 15:42:03 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz, no casualties",
-          "url": "https://www.aljazeera.com/news/2026/8/8/uae-says-iran-targeted-adnoc-tanker-in-hormuz-no-casualties-2?traffic_source=rss",
-          "date": "Sat, 08 Aug 2026 15:01:29 +0000",
-          "source": "Al Jazeera"
         }
       ]
     },
@@ -3053,36 +3054,36 @@
       "cities": [
         {
           "city": "New York",
-          "temp": 30,
-          "wind": 16,
-          "humidity": 71,
+          "temp": 31,
+          "wind": 17,
+          "humidity": 61,
           "precip": 0.0,
           "lat": 40.71,
           "lon": -74.01
         },
         {
           "city": "London",
-          "temp": 27,
-          "wind": 11,
-          "humidity": 25,
+          "temp": 26,
+          "wind": 9,
+          "humidity": 27,
           "precip": 0.0,
           "lat": 51.51,
           "lon": -0.13
         },
         {
           "city": "Tokyo",
-          "temp": 24,
-          "wind": 4,
-          "humidity": 97,
+          "temp": 23,
+          "wind": 3,
+          "humidity": 98,
           "precip": 0.0,
           "lat": 35.68,
           "lon": 139.69
         },
         {
           "city": "Moscow",
-          "temp": 20,
+          "temp": 19,
           "wind": 4,
-          "humidity": 66,
+          "humidity": 68,
           "precip": 0.0,
           "lat": 55.76,
           "lon": 37.62
@@ -3090,8 +3091,8 @@
         {
           "city": "Beijing",
           "temp": 24,
-          "wind": 4,
-          "humidity": 80,
+          "wind": 5,
+          "humidity": 76,
           "precip": 0.0,
           "lat": 39.9,
           "lon": 116.4
@@ -3100,16 +3101,16 @@
           "city": "Mumbai",
           "temp": 27,
           "wind": 13,
-          "humidity": 86,
-          "precip": 0.0,
+          "humidity": 87,
+          "precip": 0.1,
           "lat": 19.08,
           "lon": 72.88
         },
         {
           "city": "Sao Paulo",
-          "temp": 27,
-          "wind": 20,
-          "humidity": 45,
+          "temp": 26,
+          "wind": 18,
+          "humidity": 50,
           "precip": 0.0,
           "lat": -23.55,
           "lon": -46.63
@@ -3117,52 +3118,52 @@
         {
           "city": "Sydney",
           "temp": 8,
-          "wind": 5,
-          "humidity": 91,
+          "wind": 4,
+          "humidity": 88,
           "precip": 0.0,
           "lat": -33.87,
           "lon": 151.21
         },
         {
           "city": "Cairo",
-          "temp": 31,
-          "wind": 13,
-          "humidity": 53,
+          "temp": 30,
+          "wind": 11,
+          "humidity": 57,
           "precip": 0.0,
           "lat": 30.04,
           "lon": 31.24
         },
         {
-          "city": "Lagos",
-          "temp": 26,
-          "wind": 15,
-          "humidity": 86,
-          "precip": 0.0,
-          "lat": 6.52,
-          "lon": 3.38
-        },
-        {
           "city": "Dubai",
-          "temp": 39,
-          "wind": 12,
-          "humidity": 31,
+          "temp": 37,
+          "wind": 11,
+          "humidity": 46,
           "precip": 0.0,
           "lat": 25.2,
           "lon": 55.27
         },
         {
-          "city": "Berlin",
-          "temp": 23,
+          "city": "Singapore",
+          "temp": 26,
           "wind": 8,
-          "humidity": 37,
+          "humidity": 88,
+          "precip": 0.0,
+          "lat": 1.35,
+          "lon": 103.82
+        },
+        {
+          "city": "Berlin",
+          "temp": 22,
+          "wind": 7,
+          "humidity": 42,
           "precip": 0.0,
           "lat": 52.52,
           "lon": 13.4
         },
         {
           "city": "Paris",
-          "temp": 31,
-          "wind": 6,
+          "temp": 30,
+          "wind": 5,
           "humidity": 20,
           "precip": 0.0,
           "lat": 48.85,
@@ -3170,29 +3171,29 @@
         },
         {
           "city": "Istanbul",
-          "temp": 26,
-          "wind": 12,
-          "humidity": 83,
+          "temp": 25,
+          "wind": 9,
+          "humidity": 86,
           "precip": 0.0,
           "lat": 41.01,
           "lon": 28.98
         }
       ],
       "sparkline": [
-        71,
-        61,
+        79,
+        62,
         52,
-        39,
-        52,
-        61,
-        61,
+        38,
+        55,
+        66,
+        62,
         0,
-        74,
-        58,
+        76,
         100,
+        62,
         48,
-        74,
-        58
+        76,
+        59
       ],
       "dream": {
         "D": 1.425,
@@ -3301,11 +3302,6 @@
       "status": "ok",
       "posts": [
         {
-          "title": "Elon Musk Refuses Ukrainian Request to Enable Starlink for Deep Strikes Inside Russia",
-          "url": "https://www.reddit.com/r/worldnews/comments/1viadam/elon_musk_refuses_ukrainian_request_to_enable/",
-          "date": "2026-08-07T19:32:06+00:00"
-        },
-        {
           "title": "Greenland issues ‘strong warning’ as Trump-linked oil firm prepares to drill",
           "url": "https://www.reddit.com/r/worldnews/comments/1vio0lp/greenland_issues_strong_warning_as_trumplinked/",
           "date": "2026-08-08T05:59:39+00:00"
@@ -3316,14 +3312,14 @@
           "date": "2026-08-08T11:53:18+00:00"
         },
         {
-          "title": "Unidentified drone explodes in Bulgaria, close to major gas pipeline",
-          "url": "https://www.reddit.com/r/worldnews/comments/1vityw0/unidentified_drone_explodes_in_bulgaria_close_to/",
-          "date": "2026-08-08T11:49:39+00:00"
-        },
-        {
           "title": "Nazi shipwrecks emerge from the depths as Europe’s Danube dries up",
           "url": "https://www.reddit.com/r/worldnews/comments/1viutxp/nazi_shipwrecks_emerge_from_the_depths_as_europes/",
           "date": "2026-08-08T12:32:18+00:00"
+        },
+        {
+          "title": "Unidentified drone explodes in Bulgaria, close to major gas pipeline",
+          "url": "https://www.reddit.com/r/worldnews/comments/1vityw0/unidentified_drone_explodes_in_bulgaria_close_to/",
+          "date": "2026-08-08T11:49:39+00:00"
         },
         {
           "title": "Kim Jong Un Reaps $22 Billion Windfall from Russian Alliance",
@@ -3346,6 +3342,11 @@
           "date": "2026-08-08T02:25:03+00:00"
         },
         {
+          "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
+          "url": "https://www.reddit.com/r/worldnews/comments/1vizdc7/iran_issues_list_of_demands_dampening_hopes_of/",
+          "date": "2026-08-08T15:49:07+00:00"
+        },
+        {
           "title": "Romania rushes to sink 4 barges in the Danube to keep a nuclear power plant's second reactor running",
           "url": "https://www.reddit.com/r/worldnews/comments/1vii0l9/romania_rushes_to_sink_4_barges_in_the_danube_to/",
           "date": "2026-08-08T00:53:16+00:00"
@@ -3356,9 +3357,9 @@
           "date": "2026-08-08T12:08:08+00:00"
         },
         {
-          "title": "Iran Issues List of Demands, Dampening Hopes of Reopening Strait of Hormuz",
-          "url": "https://www.reddit.com/r/worldnews/comments/1vizdc7/iran_issues_list_of_demands_dampening_hopes_of/",
-          "date": "2026-08-08T15:49:07+00:00"
+          "title": "India Has Initiated Efforts To Join 6th-Generation Fighter Jet Programme: Centre",
+          "url": "https://www.reddit.com/r/worldnews/comments/1viv99h/india_has_initiated_efforts_to_join_6thgeneration/",
+          "date": "2026-08-08T12:52:26+00:00"
         },
         {
           "title": "Nepal overruled its own security agencies to cancel Tibetan studies conference under Chinese pressur",
@@ -3366,14 +3367,14 @@
           "date": "2026-08-08T05:51:28+00:00"
         },
         {
-          "title": "India Has Initiated Efforts To Join 6th-Generation Fighter Jet Programme: Centre",
-          "url": "https://www.reddit.com/r/worldnews/comments/1viv99h/india_has_initiated_efforts_to_join_6thgeneration/",
-          "date": "2026-08-08T12:52:26+00:00"
-        },
-        {
           "title": "Kyiv agrees to halt attacks on non-Russian tankers in Black Sea",
           "url": "https://www.reddit.com/r/worldnews/comments/1vitj4z/kyiv_agrees_to_halt_attacks_on_nonrussian_tankers/",
           "date": "2026-08-08T11:26:31+00:00"
+        },
+        {
+          "title": "Entire community of Summerland, B.C., ordered to evacuate due to fast-moving wildfire",
+          "url": "https://www.reddit.com/r/worldnews/comments/1viyghb/entire_community_of_summerland_bc_ordered_to/",
+          "date": "2026-08-08T15:11:05+00:00"
         }
       ]
     },
@@ -3384,147 +3385,147 @@
       "count": 30,
       "edits": [
         {
-          "title": "Talk:Oršić Manor in Jakovlje",
-          "user": "Bot1058",
-          "time": "2026-08-08T18:41:19Z",
-          "size": 27
-        },
-        {
-          "title": "Draft:Timoteo Tilbe Capoquian Jr.",
-          "user": "BakeappleJam511",
-          "time": "2026-08-08T18:41:18Z",
-          "size": 1583
-        },
-        {
-          "title": "The Last House",
-          "user": "TenToOne10",
-          "time": "2026-08-08T18:41:17Z",
-          "size": 10637
-        },
-        {
-          "title": "Wikipedia:Deleted articles with freaky titles",
-          "user": "The Blade of the Northern Lights",
-          "time": "2026-08-08T18:41:16Z",
-          "size": 450325
-        },
-        {
-          "title": "User:Dreamyshade/LonelyPages",
-          "user": "Dreamyshade",
-          "time": "2026-08-08T18:41:16Z",
-          "size": 32375
-        },
-        {
-          "title": "Symphony No. 7 (Shostakovich)",
+          "title": "Robert Reed (author)",
           "user": "FlammableBot",
-          "time": "2026-08-08T18:41:16Z",
-          "size": 43054
+          "time": "2026-08-08T19:32:44Z",
+          "size": 18812
         },
         {
-          "title": "Nazi euthanasia and the Catholic Church",
-          "user": "Brightasaflashlight",
-          "time": "2026-08-08T18:41:16Z",
-          "size": 17953
+          "title": "G.D.N",
+          "user": "~2026-42724-76",
+          "time": "2026-08-08T19:32:44Z",
+          "size": 7739
         },
         {
-          "title": "Italy national cricket team",
-          "user": "Cric editor",
-          "time": "2026-08-08T18:41:15Z",
-          "size": 44516
+          "title": "A. J. Jenkins",
+          "user": "Stonecold415",
+          "time": "2026-08-08T19:32:44Z",
+          "size": 11209
         },
         {
-          "title": "Siege of Adrianople (1913)",
-          "user": "Kajmer05",
-          "time": "2026-08-08T18:41:15Z",
-          "size": 4002
+          "title": "User talk:~2026-43771-53",
+          "user": "Bnuuy",
+          "time": "2026-08-08T19:32:44Z",
+          "size": 2079
         },
         {
-          "title": "Věra Waldes",
-          "user": "Bender the Bot",
-          "time": "2026-08-08T18:41:13Z",
-          "size": 2366
+          "title": "Federal Agency for Mineral Resources",
+          "user": "Zackmann08",
+          "time": "2026-08-08T19:32:43Z",
+          "size": 1899
         },
         {
-          "title": "William Royse Lysaght",
-          "user": "PrincessDonutQAC",
-          "time": "2026-08-08T18:41:12Z",
-          "size": 6297
+          "title": "810s BC",
+          "user": "SVcode",
+          "time": "2026-08-08T19:32:43Z",
+          "size": 1112
         },
         {
-          "title": "User:Vitsuha/travel World",
-          "user": "Vitsuha",
-          "time": "2026-08-08T18:41:12Z",
-          "size": 55500
+          "title": "User:Bearian/Contributions",
+          "user": "Bearian",
+          "time": "2026-08-08T19:32:42Z",
+          "size": 111744
         },
         {
-          "title": "1997 Constitution of Fiji: Chapter 6",
+          "title": "Archie Saunders",
+          "user": "SporkBot",
+          "time": "2026-08-08T19:32:42Z",
+          "size": 4616
+        },
+        {
+          "title": "Triband (flag)",
+          "user": "Ryderpedia",
+          "time": "2026-08-08T19:32:42Z",
+          "size": 19357
+        },
+        {
+          "title": "Jimmy Witherspoon",
+          "user": "Turtlens",
+          "time": "2026-08-08T19:32:42Z",
+          "size": 18515
+        },
+        {
+          "title": "IsaKidd refining technology",
+          "user": "Brodska213",
+          "time": "2026-08-08T19:32:41Z",
+          "size": 44053
+        },
+        {
+          "title": "Federal Agency for Medicines and Health Products",
+          "user": "Zackmann08",
+          "time": "2026-08-08T19:32:40Z",
+          "size": 3820
+        },
+        {
+          "title": "Module:Sports attendance/testcases wikitext",
+          "user": "RobinL-CA",
+          "time": "2026-08-08T19:32:40Z",
+          "size": 1413
+        },
+        {
+          "title": "Dane Rudhyar",
           "user": "FlammableBot",
-          "time": "2026-08-08T18:41:11Z",
-          "size": 27546
+          "time": "2026-08-08T19:32:39Z",
+          "size": 22584
         },
         {
-          "title": "Wikipedia talk:Template index/User talk namespace",
-          "user": "Lowercase sigmabot III",
-          "time": "2026-08-08T18:41:10Z",
-          "size": 42163
+          "title": "Durgesh Nandini (1956 film)",
+          "user": "Pinakpani",
+          "time": "2026-08-08T19:32:39Z",
+          "size": 2279
         },
         {
-          "title": "Åre Municipality",
-          "user": "Listz3",
-          "time": "2026-08-08T18:41:09Z",
-          "size": 9893
+          "title": "User talk:Mirandinha 41",
+          "user": "Mirandinha 41",
+          "time": "2026-08-08T19:32:39Z",
+          "size": 2369
         },
         {
-          "title": "ISACCO",
-          "user": "Vikingsam",
-          "time": "2026-08-08T18:41:09Z",
-          "size": 13079
+          "title": "Archie McParland",
+          "user": "SporkBot",
+          "time": "2026-08-08T19:32:37Z",
+          "size": 10463
         },
         {
-          "title": "Template:Concón National squad",
-          "user": "ImSnot",
-          "time": "2026-08-08T18:41:09Z",
-          "size": 4356
+          "title": "User talk:DaxServer/DiscussionCloser",
+          "user": "FaviFake",
+          "time": "2026-08-08T19:32:37Z",
+          "size": 26605
         },
         {
-          "title": "List of equipment of the Royal Moroccan Army",
-          "user": "SemperSupra",
-          "time": "2026-08-08T18:41:08Z",
-          "size": 75465
+          "title": "Federal Agency for Forestry",
+          "user": "Zackmann08",
+          "time": "2026-08-08T19:32:37Z",
+          "size": 1885
         },
         {
-          "title": "Wikipedia talk:Template index/User talk namespace/Archive 23",
-          "user": "Lowercase sigmabot III",
-          "time": "2026-08-08T18:41:08Z",
-          "size": 70775
-        },
-        {
-          "title": "1993 Torneo Intermedio",
-          "user": "Ericbaudouin",
-          "time": "2026-08-08T18:41:08Z",
-          "size": 31783
+          "title": "May 24 (Eastern Orthodox liturgics)",
+          "user": "ΙΣΧΣΝΙΚΑ-888",
+          "time": "2026-08-08T19:32:36Z",
+          "size": 14678
         }
       ],
       "sparkline": [
-        0,
-        0,
-        2,
-        100,
-        7,
-        10,
-        4,
-        10,
-        1,
-        1,
-        1,
-        12,
+        16,
         6,
         9,
-        2,
-        3,
         1,
-        17,
+        1,
+        0,
+        100,
+        3,
         16,
-        7
+        16,
+        39,
+        2,
+        0,
+        19,
+        1,
+        1,
+        8,
+        23,
+        1,
+        12
       ],
       "dream": null
     },
@@ -3537,89 +3538,89 @@
         {
           "title": "Denmark Requires Oral Defenses for Students' Written Work to Counter AI Cheating",
           "url": "https://mezha.net/eng/bukvy/ca117584_denmark_requires_oral/",
-          "score": 39,
-          "comments": 13
+          "score": 147,
+          "comments": 65
         },
         {
           "title": "Fastmail offers EU data region",
           "url": "https://www.fastmail.com/blog/fastmail-offers-eu-data-region/",
-          "score": 112,
-          "comments": 54
-        },
-        {
-          "title": "LinkedIn Feed Blocker",
-          "url": "https://github.com/andrewpollack/linkedin-feed-blocker",
-          "score": 52,
-          "comments": 39
-        },
-        {
-          "title": "A domain can now say it is for sale, in DNS",
-          "url": "https://specification.website/spec/foundations/for-sale-dns/",
-          "score": 225,
-          "comments": 100
+          "score": 154,
+          "comments": 79
         },
         {
           "title": "\"Code was never the hard part\" is an insult to all programmers",
           "url": "https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers",
-          "score": 98,
-          "comments": 71
+          "score": 196,
+          "comments": 134
         },
         {
-          "title": "DeepMind's WeatherNext model achieves breakthrough forecasting cyclones",
-          "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
-          "score": 296,
-          "comments": 96
+          "title": "LinkedIn Feed Blocker",
+          "url": "https://github.com/andrewpollack/linkedin-feed-blocker",
+          "score": 81,
+          "comments": 48
         },
         {
-          "title": "Timeline of the OpenAI accidental attack against Hugging Face",
-          "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
-          "score": 210,
-          "comments": 222
-        },
-        {
-          "title": "Gateway 2000's hilariously bad ads in the 90s (Part II)",
-          "url": "https://buttondown.com/suchbadtechads/archive/gateway-2000-part-2/",
-          "score": 66,
-          "comments": 53
-        },
-        {
-          "title": "Triton: DirectX 11 Driver for QEMU",
-          "url": "https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/",
-          "score": 67,
-          "comments": 7
-        },
-        {
-          "title": "Voyager 1 FDS Computer Emulator",
-          "url": "https://zaneham.github.io/voyager-fds-emulator/",
-          "score": 51,
-          "comments": 11
+          "title": "A domain can now say it is for sale, in DNS",
+          "url": "https://specification.website/spec/foundations/for-sale-dns/",
+          "score": 245,
+          "comments": 111
         },
         {
           "title": "Can Intel finally beat ARM on performance per Watt?",
           "url": "https://hackaday.com/2026/08/08/want-energy-efficiency-dude-youre-getting-a-dell/",
-          "score": 19,
-          "comments": 2
+          "score": 52,
+          "comments": 16
         },
         {
-          "title": "US Military's cyber command unit grapples with cluster of deaths by suicide",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-06/us-military-s-cyber-command-unit-grapples-with-cluster-of-deaths-by-suicide",
-          "score": 129,
-          "comments": 189
+          "title": "DeepMind's WeatherNext model achieves breakthrough forecasting cyclones",
+          "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+          "score": 311,
+          "comments": 99
+        },
+        {
+          "title": "Timeline of the OpenAI accidental attack against Hugging Face",
+          "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
+          "score": 234,
+          "comments": 243
+        },
+        {
+          "title": "Triton: DirectX 11 Driver for QEMU",
+          "url": "https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/",
+          "score": 87,
+          "comments": 14
+        },
+        {
+          "title": "Python string literals are kinda funny",
+          "url": "https://sebsite.pw/w/20260806-pystrings.html",
+          "score": 16,
+          "comments": 3
+        },
+        {
+          "title": "Gateway 2000's hilariously bad ads in the 90s (Part II)",
+          "url": "https://buttondown.com/suchbadtechads/archive/gateway-2000-part-2/",
+          "score": 69,
+          "comments": 56
+        },
+        {
+          "title": "Voyager 1 FDS Computer Emulator",
+          "url": "https://zaneham.github.io/voyager-fds-emulator/",
+          "score": 56,
+          "comments": 12
         }
       ],
       "sparkline": [
-        7,
-        34,
+        44,
+        47,
+        61,
+        22,
+        78,
         12,
-        74,
-        29,
         100,
-        69,
-        17,
-        17,
-        12,
+        74,
+        24,
         0,
-        40
+        18,
+        14
       ],
       "dream": null
     },
@@ -3631,70 +3632,70 @@
       "repos": [
         {
           "name": "codecrafters-io/build-your-own-x",
-          "stars": 537800,
+          "stars": 537808,
           "lang": "Markdown",
           "desc": "Master programming by recreating your favorite technologies from scratch.",
           "url": "https://github.com/codecrafters-io/build-your-own-x"
         },
         {
           "name": "sindresorhus/awesome",
-          "stars": 493676,
+          "stars": 493688,
           "lang": null,
           "desc": "😎 Awesome lists about all kinds of interesting topics",
           "url": "https://github.com/sindresorhus/awesome"
         },
         {
           "name": "public-apis/public-apis",
-          "stars": 455069,
+          "stars": 455074,
           "lang": "Python",
           "desc": "A collective list of free APIs",
           "url": "https://github.com/public-apis/public-apis"
         },
         {
           "name": "freeCodeCamp/freeCodeCamp",
-          "stars": 453676,
+          "stars": 453675,
           "lang": "TypeScript",
           "desc": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming,",
           "url": "https://github.com/freeCodeCamp/freeCodeCamp"
         },
         {
           "name": "EbookFoundation/free-programming-books",
-          "stars": 393980,
+          "stars": 393981,
           "lang": "Python",
           "desc": ":books: Freely available programming books",
           "url": "https://github.com/EbookFoundation/free-programming-books"
         },
         {
           "name": "openclaw/openclaw",
-          "stars": 385562,
+          "stars": 385564,
           "lang": "TypeScript",
           "desc": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
           "url": "https://github.com/openclaw/openclaw"
         },
         {
           "name": "nilbuild/developer-roadmap",
-          "stars": 363944,
+          "stars": 363945,
           "lang": "TypeScript",
           "desc": "Interactive roadmaps, guides and other educational content to help developers gr",
           "url": "https://github.com/nilbuild/developer-roadmap"
         },
         {
           "name": "donnemartin/system-design-primer",
-          "stars": 362416,
+          "stars": 362427,
           "lang": "Python",
           "desc": "Learn how to design large-scale systems. Prep for the system design interview.  ",
           "url": "https://github.com/donnemartin/system-design-primer"
         },
         {
           "name": "jwasham/coding-interview-university",
-          "stars": 358176,
+          "stars": 358177,
           "lang": null,
           "desc": "A complete computer science study plan to become a software engineer.",
           "url": "https://github.com/jwasham/coding-interview-university"
         },
         {
           "name": "vinta/awesome-python",
-          "stars": 312894,
+          "stars": 312901,
           "lang": "Python",
           "desc": "An opinionated list of Python frameworks, libraries, tools, and resources",
           "url": "https://github.com/vinta/awesome-python"
