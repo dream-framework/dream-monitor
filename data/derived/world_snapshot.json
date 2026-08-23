@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-23T10:26:51.225015+00:00",
+  "generated_at": "2026-08-23T10:52:17.035612+00:00",
   "feeds": {
     "earthquakes": {
       "name": "Earthquakes",
       "category": "geophysical",
       "status": "ok",
-      "count": 60,
+      "count": 63,
       "latest": [
         {
           "mag": 5.8,
@@ -32,20 +32,20 @@
           "time": "2026-08-22T19:54:07.957Z"
         },
         {
-          "mag": 4.8,
-          "lat": 36.8178,
-          "lon": 74.6577,
-          "depth": 10.0,
-          "place": "55 km N of Barishal, Pakistan",
-          "time": "2026-08-23T10:04:38.197Z"
-        },
-        {
           "mag": 4.7,
           "lat": -3.2971,
           "lon": 100.4875,
           "depth": 26.342,
           "place": "170 km SW of Sungai Penuh, Indonesia",
           "time": "2026-08-22T16:33:04.780Z"
+        },
+        {
+          "mag": 4.6,
+          "lat": 36.7596,
+          "lon": 74.4767,
+          "depth": 45.456,
+          "place": "52 km NNW of Barishal, Pakistan",
+          "time": "2026-08-23T10:04:42.433Z"
         },
         {
           "mag": 4.6,
@@ -221,6 +221,7 @@
         4,
         8,
         68,
+        11,
         29,
         0,
         35,
@@ -258,66 +259,65 @@
         3,
         1,
         11,
-        5,
-        0
+        5
       ],
       "dream": {
-        "D": 0.8331,
-        "lambda_q": 0.42,
-        "r2": 0.895,
-        "regime": "THRESHOLD",
+        "D": 0.7286,
+        "lambda_q": 0.32,
+        "r2": 0.9144,
+        "regime": "NATURAL",
         "verdict": "S2_LOSES",
-        "delta_aicc": 3.14,
+        "delta_aicc": 3.04,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -65.0,
-          "EXP": -68.1,
-          "POWER": -66.1
+          "S2": -68.5,
+          "EXP": -71.6,
+          "POWER": -70.0
         },
         "retention_curve": [
           1.0,
-          0.1165,
-          0.0989,
-          -0.1419,
-          -0.0285,
-          0.065,
-          0.0568,
-          0.027,
-          0.0052,
-          -0.0012,
-          0.0839,
-          -0.0462,
-          -0.0992,
-          -0.1937,
-          -0.146
+          0.0842,
+          0.1343,
+          -0.2094,
+          0.0226,
+          0.0217,
+          0.0066,
+          0.0593,
+          -0.0028,
+          0.0018,
+          0.0089,
+          -0.0207,
+          -0.062,
+          -0.1015,
+          -0.109
         ],
         "fit_curve": [
-          1.0,
-          0.4821,
-          0.2726,
-          0.1617,
-          0.0987,
-          0.0615,
-          0.0389,
-          0.025,
-          0.0162,
-          0.0106,
-          0.007,
-          0.0046,
-          0.0031,
-          0.0021,
-          0.0014,
+          0.9999,
+          0.3946,
+          0.2142,
+          0.1262,
+          0.0778,
+          0.0496,
+          0.0324,
+          0.0215,
+          0.0145,
+          0.01,
+          0.0069,
+          0.0048,
+          0.0034,
+          0.0024,
+          0.0017,
+          0.0012,
           0.0009,
-          0.0006,
+          0.0007,
+          0.0005,
           0.0004,
           0.0003,
           0.0002,
           0.0001,
           0.0001,
           0.0001,
-          0.0,
-          0.0,
-          0.0,
+          0.0001,
           0.0,
           0.0,
           0.0,
@@ -344,7 +344,7 @@
           0.0
         ],
         "n_points": 15,
-        "model_note": "S2 loses to EXP (delta=3.1)"
+        "model_note": "S2 loses to EXP (delta=3.0)"
       }
     },
     "space_weather": {
@@ -2552,205 +2552,205 @@
       "name": "Flights",
       "category": "aviation",
       "status": "ok",
-      "count": 7919,
+      "count": 8242,
       "bands": {
-        "N Hemisphere": 6899,
-        "S Hemisphere": 265,
-        "Tropics": 659
+        "N Hemisphere": 7173,
+        "S Hemisphere": 274,
+        "Tropics": 697
       },
       "top_origins": [
         [
           "United States",
-          1341
+          1567
         ],
         [
           "United Kingdom",
-          707
+          713
         ],
         [
           "Germany",
-          546
+          519
         ],
         [
           "China",
-          368
+          371
         ],
         [
           "Turkey",
-          356
+          349
         ],
         [
           "Ireland",
-          354
+          344
         ],
         [
           "Malta",
-          280
+          277
         ],
         [
           "Spain",
-          252
+          245
         ],
         [
           "France",
-          236
+          223
         ],
         [
           "Japan",
-          221
+          217
         ]
       ],
       "sparkline": [
-        1,
-        81,
-        100,
-        45,
-        79,
-        91,
-        41,
-        6,
-        16,
-        23,
-        67,
-        93,
-        88,
-        20,
-        66,
-        79,
-        81,
-        2,
+        35,
+        90,
+        90,
         76,
-        11,
-        84,
-        52,
-        23,
-        88,
-        81,
-        26,
-        7,
-        84,
-        28,
-        0,
-        11,
-        41,
         15,
+        16,
         79,
-        11,
         14,
-        3,
-        67,
-        76,
-        71,
-        28,
-        9,
-        34,
-        36,
-        43,
-        4,
-        10,
+        93,
+        97,
+        30,
+        45,
+        83,
+        2,
+        44,
+        11,
+        2,
         85,
+        87,
+        85,
+        90,
         88,
-        88
+        2,
+        2,
+        0,
+        36,
+        66,
+        70,
+        100,
+        1,
+        36,
+        88,
+        12,
+        10,
+        3,
+        71,
+        1,
+        95,
+        54,
+        56,
+        85,
+        71,
+        15,
+        47,
+        25,
+        4,
+        59,
+        93,
+        98,
+        93
       ],
       "dream": {
-        "D": 0.1734,
+        "D": 0.1814,
         "lambda_q": 0.0,
-        "r2": 0.9856,
+        "r2": 0.9895,
         "regime": "NATURAL",
         "verdict": "S2_WINS",
-        "delta_aicc": -9.59,
+        "delta_aicc": -14.2,
         "best_alt": "POWER",
         "model_aicc": {
-          "S2": -878.6,
-          "EXP": -853.2,
-          "POWER": -869.0
+          "S2": -909.9,
+          "EXP": -893.8,
+          "POWER": -895.7
         },
         "retention_curve": [
           1.0,
-          0.0351,
-          0.0318,
-          0.0456,
-          0.0184,
-          0.0156,
-          0.0068,
-          -0.0063,
-          0.0191,
-          0.0327,
-          0.0183,
-          0.0058,
-          0.0152,
-          0.0286,
+          0.0379,
+          0.0248,
+          0.0176,
+          0.0275,
+          0.0032,
+          -0.0139,
+          0.0157,
+          0.0144,
+          0.0314,
+          0.0045,
+          0.0194,
+          0.0146,
           -0.0085,
-          0.0069,
-          0.0035,
-          0.0023,
-          -0.0125,
-          0.0071,
-          -0.0142,
-          0.0068,
-          -0.0018,
-          0.003,
-          0.007,
-          0.0262,
+          0.0091,
+          0.0128,
+          0.0017,
           -0.0072,
-          0.0027,
-          0.0116,
-          0.0128
+          0.0015,
+          -0.0087,
+          0.0126,
+          -0.004,
+          0.0025,
+          0.001,
+          0.0177,
+          -0.0025,
+          -0.0043,
+          -0.0019,
+          -0.0028,
+          0.0047
         ],
         "fit_curve": [
-          0.7394,
-          0.0237,
-          0.0147,
-          0.0108,
-          0.0086,
-          0.0071,
-          0.0061,
-          0.0053,
-          0.0047,
-          0.0042,
-          0.0038,
-          0.0034,
-          0.0032,
-          0.0029,
+          0.7515,
+          0.0187,
+          0.011,
+          0.0078,
+          0.006,
+          0.0049,
+          0.0041,
+          0.0035,
+          0.003,
           0.0027,
-          0.0025,
           0.0024,
-          0.0022,
           0.0021,
-          0.002,
           0.0019,
           0.0018,
-          0.0017,
           0.0016,
           0.0015,
           0.0014,
-          0.0014,
           0.0013,
-          0.0013,
-          0.0012,
           0.0012,
           0.0011,
           0.0011,
           0.001,
-          0.001,
-          0.001,
-          0.0009,
-          0.0009,
           0.0009,
           0.0009,
           0.0008,
           0.0008,
           0.0008,
-          0.0008,
           0.0007,
           0.0007,
           0.0007,
-          0.0007,
-          0.0007,
-          0.0006
+          0.0006,
+          0.0006,
+          0.0006,
+          0.0006,
+          0.0005,
+          0.0005,
+          0.0005,
+          0.0005,
+          0.0005,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0003,
+          0.0003,
+          0.0003,
+          0.0003
         ],
         "n_points": 100,
-        "model_note": "S2 beats POWER (delta=-9.6)"
+        "model_note": "S2 beats POWER (delta=-14.2)"
       }
     },
     "news": {
@@ -2889,17 +2889,17 @@
         {
           "city": "New York",
           "temp": 21,
-          "wind": 8,
-          "humidity": 94,
+          "wind": 17,
+          "humidity": 91,
           "precip": 0.0,
           "lat": 40.71,
           "lon": -74.01
         },
         {
           "city": "London",
-          "temp": 18,
-          "wind": 3,
-          "humidity": 47,
+          "temp": 19,
+          "wind": 4,
+          "humidity": 44,
           "precip": 0.0,
           "lat": 51.51,
           "lon": -0.13
@@ -2908,25 +2908,25 @@
           "city": "Tokyo",
           "temp": 27,
           "wind": 4,
-          "humidity": 78,
+          "humidity": 81,
           "precip": 0.0,
           "lat": 35.68,
           "lon": 139.69
         },
         {
           "city": "Moscow",
-          "temp": 22,
+          "temp": 23,
           "wind": 13,
-          "humidity": 45,
+          "humidity": 43,
           "precip": 0.0,
           "lat": 55.76,
           "lon": 37.62
         },
         {
           "city": "Beijing",
-          "temp": 30,
-          "wind": 8,
-          "humidity": 78,
+          "temp": 29,
+          "wind": 7,
+          "humidity": 81,
           "precip": 0.0,
           "lat": 39.9,
           "lon": 116.4
@@ -2935,7 +2935,7 @@
           "city": "Mumbai",
           "temp": 29,
           "wind": 17,
-          "humidity": 72,
+          "humidity": 73,
           "precip": 0.1,
           "lat": 19.08,
           "lon": 72.88
@@ -2943,8 +2943,8 @@
         {
           "city": "Sao Paulo",
           "temp": 13,
-          "wind": 7,
-          "humidity": 89,
+          "wind": 6,
+          "humidity": 86,
           "precip": 0.0,
           "lat": -23.55,
           "lon": -46.63
@@ -2960,27 +2960,36 @@
         },
         {
           "city": "Cairo",
-          "temp": 33,
+          "temp": 34,
           "wind": 8,
-          "humidity": 46,
+          "humidity": 42,
           "precip": 0.0,
           "lat": 30.04,
           "lon": 31.24
         },
         {
           "city": "Lagos",
-          "temp": 27,
-          "wind": 6,
-          "humidity": 79,
+          "temp": 26,
+          "wind": 7,
+          "humidity": 81,
           "precip": 1.0,
           "lat": 6.52,
           "lon": 3.38
         },
         {
+          "city": "Dubai",
+          "temp": 40,
+          "wind": 17,
+          "humidity": 41,
+          "precip": 0.0,
+          "lat": 25.2,
+          "lon": 55.27
+        },
+        {
           "city": "Singapore",
           "temp": 30,
-          "wind": 10,
-          "humidity": 56,
+          "wind": 9,
+          "humidity": 57,
           "precip": 0.0,
           "lat": 1.35,
           "lon": 103.82
@@ -2988,9 +2997,9 @@
         {
           "city": "Berlin",
           "temp": 17,
-          "wind": 15,
-          "humidity": 64,
-          "precip": 0.0,
+          "wind": 16,
+          "humidity": 61,
+          "precip": 0.1,
           "lat": 52.52,
           "lon": 13.4
         },
@@ -2998,36 +3007,37 @@
           "city": "Paris",
           "temp": 21,
           "wind": 12,
-          "humidity": 46,
+          "humidity": 43,
           "precip": 0.0,
           "lat": 48.85,
           "lon": 2.35
         },
         {
           "city": "Istanbul",
-          "temp": 30,
-          "wind": 10,
-          "humidity": 47,
+          "temp": 31,
+          "wind": 12,
+          "humidity": 43,
           "precip": 0.0,
           "lat": 41.01,
           "lon": 28.98
         }
       ],
       "sparkline": [
-        40,
-        25,
-        70,
-        45,
-        85,
-        80,
+        30,
+        22,
+        52,
+        37,
+        59,
+        59,
         0,
-        15,
+        11,
+        78,
+        48,
         100,
-        70,
-        85,
-        20,
-        40,
-        85
+        63,
+        15,
+        30,
+        67
       ],
       "dream": {
         "D": 1.425,
@@ -3219,147 +3229,147 @@
       "count": 30,
       "edits": [
         {
-          "title": "User talk:Cptabhiimanyuseven",
-          "user": "ClueBot III",
-          "time": "2026-08-23T10:27:19Z",
-          "size": 4726
+          "title": "Neos Amfilochos F.C.",
+          "user": "Seanjackson67",
+          "time": "2026-08-23T10:52:31Z",
+          "size": 1570
         },
         {
-          "title": "User talk:Cptabhiimanyuseven/Archive 2",
-          "user": "ClueBot III",
-          "time": "2026-08-23T10:27:18Z",
-          "size": 43513
+          "title": "User:White Rivers/sandbox",
+          "user": "White Rivers",
+          "time": "2026-08-23T10:52:29Z",
+          "size": 3309
         },
         {
-          "title": "Talk:Somaliland campaign",
-          "user": "TarnishedPath",
-          "time": "2026-08-23T10:27:16Z",
-          "size": 40571
+          "title": "Talk:Asiong Salonga",
+          "user": "~2026-46192-72",
+          "time": "2026-08-23T10:52:28Z",
+          "size": 454
         },
         {
-          "title": "Knicks–Nets rivalry",
-          "user": "~2026-46177-72",
-          "time": "2026-08-23T10:27:16Z",
-          "size": 23205
-        },
-        {
-          "title": "Wikipedia talk:Temporary accounts",
-          "user": "Boud",
-          "time": "2026-08-23T10:27:16Z",
-          "size": 26975
-        },
-        {
-          "title": "Homicide: Life on the Street season 1",
+          "title": "Jerome Gavis",
           "user": "GreenC bot",
-          "time": "2026-08-23T10:27:15Z",
-          "size": 80086
+          "time": "2026-08-23T10:52:28Z",
+          "size": 2130
         },
         {
-          "title": "Sabra (person)",
-          "user": "Reenem",
-          "time": "2026-08-23T10:27:12Z",
-          "size": 16382
+          "title": "Draft:The Factory at The District",
+          "user": "Unknownuser45266",
+          "time": "2026-08-23T10:52:27Z",
+          "size": 953
         },
         {
-          "title": "Homicide: A Year on the Killing Streets",
+          "title": "Prince Arisugawa Takehito",
+          "user": "Shernop",
+          "time": "2026-08-23T10:52:26Z",
+          "size": 12161
+        },
+        {
+          "title": "Ethan Erhahon",
+          "user": "GiantSnowman",
+          "time": "2026-08-23T10:52:26Z",
+          "size": 13112
+        },
+        {
+          "title": "User:ArchivioItalia/sandbox",
+          "user": "ArchivioItalia",
+          "time": "2026-08-23T10:52:25Z",
+          "size": 14659
+        },
+        {
+          "title": "Jerome Adams",
           "user": "GreenC bot",
-          "time": "2026-08-23T10:27:10Z",
-          "size": 31710
+          "time": "2026-08-23T10:52:24Z",
+          "size": 28413
         },
         {
-          "title": "Multivalvulida",
-          "user": "Kelubact",
-          "time": "2026-08-23T10:27:09Z",
-          "size": 983
+          "title": "User:'zinbot/logs/skippedRfDs.json",
+          "user": "'zinbot",
+          "time": "2026-08-23T10:52:24Z",
+          "size": 2
         },
         {
-          "title": "Pushtiie",
-          "user": "~2026-46129-61",
-          "time": "2026-08-23T10:27:09Z",
-          "size": 2917
+          "title": "2020s in film",
+          "user": "Rkrausephoto",
+          "time": "2026-08-23T10:52:23Z",
+          "size": 20343
         },
         {
-          "title": "File:Union Omaha Soccer Club logo.svg",
-          "user": "MPGuy2824",
-          "time": "2026-08-23T10:27:09Z",
-          "size": 724
+          "title": "User:Gnowxilef/sandbox",
+          "user": "Gnowxilef",
+          "time": "2026-08-23T10:52:23Z",
+          "size": 447
         },
         {
-          "title": "Sofia Danova",
-          "user": "Elizaiv22",
-          "time": "2026-08-23T10:27:08Z",
-          "size": 2846
+          "title": "Hellevoetsluis",
+          "user": "Dave.Dunford",
+          "time": "2026-08-23T10:52:23Z",
+          "size": 16066
         },
         {
-          "title": "Template:God sidebar",
-          "user": "DaniPine3",
-          "time": "2026-08-23T10:27:08Z",
-          "size": 3071
+          "title": "User:DreamRimmer bot/Redirects.json",
+          "user": "DreamRimmer bot",
+          "time": "2026-08-23T10:52:22Z",
+          "size": 148
         },
         {
-          "title": "File:Temple of the True Inner Light storefront.jpg",
-          "user": "MPGuy2824",
-          "time": "2026-08-23T10:27:08Z",
-          "size": 976
+          "title": "Talk:Ubehebe Crater",
+          "user": "~2026-46154-37",
+          "time": "2026-08-23T10:52:19Z",
+          "size": 300
         },
         {
-          "title": "3-Hydroxybenzoic acid",
-          "user": "~2026-44956-68",
-          "time": "2026-08-23T10:27:07Z",
-          "size": 2645
+          "title": "Diabetes self-management",
+          "user": "Katemeshi101",
+          "time": "2026-08-23T10:52:18Z",
+          "size": 31196
         },
         {
-          "title": "2026 BWF World Tour",
-          "user": "~2026-46148-92",
-          "time": "2026-08-23T10:27:06Z",
-          "size": 290006
+          "title": "Talk:George Bullock (sculptor)",
+          "user": "Simeon",
+          "time": "2026-08-23T10:52:18Z",
+          "size": 149
         },
         {
-          "title": "Homewood Center",
-          "user": "GreenC bot",
-          "time": "2026-08-23T10:27:06Z",
-          "size": 11536
+          "title": "Gaulish",
+          "user": "GastonN'estPasBon",
+          "time": "2026-08-23T10:52:17Z",
+          "size": 90149
         },
         {
-          "title": "Oscillibacter sp ER4",
-          "user": "CAPTAIN RAJU",
-          "time": "2026-08-23T10:27:06Z",
-          "size": 7819
+          "title": "User:Max/Reports/PendingChanges",
+          "user": "SDZeroBot",
+          "time": "2026-08-23T10:52:17Z",
+          "size": 11427
         },
         {
-          "title": "User talk:Thusthatwork",
-          "user": "Thusthatwork",
-          "time": "2026-08-23T10:27:06Z",
-          "size": 3625
-        },
-        {
-          "title": "Volleyball at the 2026 Mediterranean Games – Men's team rosters",
-          "user": "Dddenilson",
-          "time": "2026-08-23T10:27:05Z",
-          "size": 3981
+          "title": "MLS rivalry cups",
+          "user": "~2026-46154-67",
+          "time": "2026-08-23T10:52:16Z",
+          "size": 14933
         }
       ],
       "sparkline": [
-        1,
-        15,
-        14,
-        8,
-        9,
-        27,
-        5,
-        11,
-        0,
-        1,
-        0,
-        1,
-        1,
-        0,
-        1,
-        100,
+        2,
         4,
+        1,
         2,
         1,
-        1
+        13,
+        15,
+        16,
+        32,
+        0,
+        23,
+        0,
+        18,
+        0,
+        0,
+        35,
+        0,
+        100,
+        13,
+        17
       ],
       "dream": null
     },
@@ -3372,89 +3382,89 @@
         {
           "title": "The End of an Athlon",
           "url": "http://www.os2museum.com/wp/the-end-of-an-athlon/",
-          "score": 90,
-          "comments": 24
+          "score": 101,
+          "comments": 28
         },
         {
           "title": "To become a better writer, read as much as you can",
           "url": "https://nappertime.com/the-golden-rule-of-becoming-a-better-writer/",
-          "score": 152,
-          "comments": 102
+          "score": 166,
+          "comments": 111
         },
         {
           "title": "JIT Compiling Code in 5μs",
           "url": "https://malisper.me/jit-compiling-code-in-5-us/",
-          "score": 66,
-          "comments": 24
+          "score": 71,
+          "comments": 35
         },
         {
           "title": "MartyPC is a cross-platform emulator of early PCs written in Rust",
           "url": "https://martypc.net/",
-          "score": 117,
-          "comments": 38
+          "score": 121,
+          "comments": 39
         },
         {
           "title": "Fast and Hard Code",
           "url": "https://lucumr.pocoo.org/2026/8/22/fast-hard-code/",
-          "score": 27,
-          "comments": 5
+          "score": 37,
+          "comments": 6
         },
         {
           "title": "Why your local LLM feels dumber than it is",
           "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
-          "score": 359,
-          "comments": 129
+          "score": 363,
+          "comments": 134
         },
         {
           "title": "The Art and Beauty of Blade Runner (2015)",
           "url": "https://nappertime.com/the-art-of-and-beauty-of-blade-runner/",
-          "score": 86,
-          "comments": 29
+          "score": 91,
+          "comments": 35
         },
         {
           "title": "Scrap (2006)",
           "url": "https://twitter.com/moxie/status/2091218652133732491",
-          "score": 375,
+          "score": 376,
           "comments": 197
         },
         {
           "title": "ElevenLabs, TwelveLabs, ThirteenLabs",
           "url": "https://quantumi.sh/public/labs.html",
-          "score": 402,
-          "comments": 120
+          "score": 405,
+          "comments": 121
         },
         {
           "title": "Hister – A private, full content search index that you control",
           "url": "https://hister.org/",
-          "score": 355,
-          "comments": 82
+          "score": 363,
+          "comments": 83
         },
         {
-          "title": "I Dream of Quieter Computing",
-          "url": "https://henry.codes/writing/i-dream-of-quieter-computing/",
-          "score": 75,
-          "comments": 56
+          "title": "typ.ing",
+          "url": "https://typ.ing/",
+          "score": 280,
+          "comments": 91
         },
         {
           "title": "NanoGPT Speedrun Frontier",
           "url": "https://www.primeintellect.ai/research/nanogpt-speedrun",
-          "score": 103,
+          "score": 105,
           "comments": 27
         }
       ],
       "sparkline": [
         17,
-        33,
-        10,
-        24,
+        35,
+        9,
+        23,
         0,
         89,
-        16,
-        93,
+        15,
+        92,
         100,
-        87,
-        13,
-        20
+        89,
+        66,
+        18
       ],
       "dream": null
     },
@@ -3466,49 +3476,49 @@
       "repos": [
         {
           "name": "codecrafters-io/build-your-own-x",
-          "stars": 542217,
+          "stars": 542219,
           "lang": "Markdown",
           "desc": "Master programming by recreating your favorite technologies from scratch.",
           "url": "https://github.com/codecrafters-io/build-your-own-x"
         },
         {
           "name": "sindresorhus/awesome",
-          "stars": 499093,
+          "stars": 499098,
           "lang": null,
           "desc": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are t",
           "url": "https://github.com/sindresorhus/awesome"
         },
         {
           "name": "public-apis/public-apis",
-          "stars": 468843,
+          "stars": 468851,
           "lang": "Python",
           "desc": "A collective list of free APIs",
           "url": "https://github.com/public-apis/public-apis"
         },
         {
           "name": "freeCodeCamp/freeCodeCamp",
-          "stars": 454462,
+          "stars": 454464,
           "lang": "TypeScript",
           "desc": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming,",
           "url": "https://github.com/freeCodeCamp/freeCodeCamp"
         },
         {
           "name": "EbookFoundation/free-programming-books",
-          "stars": 395056,
+          "stars": 395059,
           "lang": "Python",
           "desc": ":books: Freely available programming books",
           "url": "https://github.com/EbookFoundation/free-programming-books"
         },
         {
           "name": "openclaw/openclaw",
-          "stars": 387196,
+          "stars": 387201,
           "lang": "TypeScript",
           "desc": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
           "url": "https://github.com/openclaw/openclaw"
         },
         {
           "name": "donnemartin/system-design-primer",
-          "stars": 365534,
+          "stars": 365537,
           "lang": "Python",
           "desc": "Learn how to design large-scale systems. Prep for the system design interview.  ",
           "url": "https://github.com/donnemartin/system-design-primer"
@@ -3522,14 +3532,14 @@
         },
         {
           "name": "jwasham/coding-interview-university",
-          "stars": 359523,
+          "stars": 359525,
           "lang": null,
           "desc": "A complete computer science study plan to become a software engineer.",
           "url": "https://github.com/jwasham/coding-interview-university"
         },
         {
           "name": "vinta/awesome-python",
-          "stars": 315591,
+          "stars": 315596,
           "lang": "Python",
           "desc": "The definitive list that answers \"I want to do X in Python, which tool should I ",
           "url": "https://github.com/vinta/awesome-python"
@@ -3558,7 +3568,7 @@
   "dream_summary": {
     "analyzed": 6,
     "extraction": 3,
-    "natural": 1,
-    "threshold": 2
+    "natural": 2,
+    "threshold": 1
   }
 }
