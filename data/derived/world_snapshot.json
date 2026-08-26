@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-26T07:49:33.340690+00:00",
+  "generated_at": "2026-08-26T08:47:28.917655+00:00",
   "feeds": {
     "earthquakes": {
       "name": "Earthquakes",
       "category": "geophysical",
       "status": "ok",
-      "count": 63,
+      "count": 62,
       "latest": [
         {
           "mag": 5.5,
@@ -78,6 +78,14 @@
           "depth": 11.628,
           "place": "215 km NNE of Lospalos, Timor Leste",
           "time": "2026-08-26T01:48:11.757Z"
+        },
+        {
+          "mag": 4.7,
+          "lat": 44.6862,
+          "lon": 146.4404,
+          "depth": 159.458,
+          "place": "82 km NE of Otrada, Russia",
+          "time": "2026-08-26T07:32:17.399Z"
         },
         {
           "mag": 4.7,
@@ -198,18 +206,11 @@
           "depth": 49.347,
           "place": "38 km NE of Sarāhan, India",
           "time": "2026-08-26T00:16:55.088Z"
-        },
-        {
-          "mag": 3.9,
-          "lat": 59.334,
-          "lon": -152.093,
-          "depth": 7.8,
-          "place": "10 km WSW of Nanwalek, Alaska",
-          "time": "2026-08-25T20:01:13.167Z"
         }
       ],
       "max_mag": 5.5,
       "sparkline": [
+        71,
         80,
         13,
         63,
@@ -258,43 +259,42 @@
         0,
         16,
         20,
-        86,
-        49
+        86
       ],
       "dream": {
-        "D": 3.4607,
-        "lambda_q": 0.37,
-        "r2": 0.9106,
+        "D": 9.9506,
+        "lambda_q": 0.0,
+        "r2": 0.9109,
         "regime": "EXTRACTION",
         "verdict": "S2_LOSES",
         "delta_aicc": 3.18,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -67.4,
-          "EXP": -70.6,
-          "POWER": -69.6
+          "S2": -67.5,
+          "EXP": -70.7,
+          "POWER": -69.8
         },
         "retention_curve": [
           1.0,
-          -0.0159,
-          -0.0269,
-          0.0327,
-          -0.0153,
-          -0.1236,
-          -0.0792,
-          -0.0776,
-          -0.1192,
-          -0.0328,
-          -0.1517,
-          0.0012,
-          0.0423,
-          0.1029,
-          -0.1286
+          -0.0142,
+          -0.0248,
+          0.0677,
+          -0.0344,
+          -0.1293,
+          -0.1168,
+          -0.1004,
+          -0.1083,
+          -0.008,
+          -0.1195,
+          0.0391,
+          0.0631,
+          0.0791,
+          -0.1069
         ],
         "fit_curve": [
           1.0,
-          0.6692,
-          0.012,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -1090,7 +1090,7 @@
         {
           "name": "VIX",
           "symbol": "^VIX",
-          "current": 15.7,
+          "current": 15.69,
           "n": 253,
           "sparkline": [
             34,
@@ -1142,7 +1142,7 @@
             14,
             25,
             19,
-            23
+            22
           ],
           "dream": {
             "D": 1.7005,
@@ -1166,7 +1166,7 @@
               0.658,
               0.5883,
               0.5404,
-              0.5185,
+              0.5186,
               0.4872,
               0.477,
               0.4653,
@@ -1248,7 +1248,7 @@
         {
           "name": "FTSE 100",
           "symbol": "^FTSE",
-          "current": 10861.91,
+          "current": 10877.19,
           "n": 255,
           "sparkline": [
             7,
@@ -1300,7 +1300,7 @@
             83,
             90,
             96,
-            91
+            94
           ],
           "dream": {
             "D": 1.0547,
@@ -1308,44 +1308,44 @@
             "r2": 0.9976,
             "regime": "EXTRACTION",
             "verdict": "S2_WINS",
-            "delta_aicc": -7.85,
+            "delta_aicc": -7.87,
             "best_alt": "EXP",
             "model_aicc": {
-              "S2": -561.5,
-              "EXP": -553.6,
+              "S2": -561.6,
+              "EXP": -553.7,
               "POWER": -201.2
             },
             "retention_curve": [
               1.0,
-              0.9792,
-              0.9587,
-              0.938,
-              0.9156,
-              0.8958,
-              0.8733,
-              0.8512,
-              0.833,
-              0.8134,
-              0.7956,
-              0.7779,
-              0.7597,
-              0.7426,
-              0.7251,
+              0.979,
+              0.9586,
+              0.9378,
+              0.9155,
+              0.8957,
+              0.8731,
+              0.8511,
+              0.8329,
+              0.8133,
+              0.7955,
+              0.7778,
+              0.7596,
+              0.7425,
+              0.725,
               0.7075,
-              0.6884,
-              0.6695,
+              0.6883,
+              0.6694,
               0.6531,
               0.6379,
-              0.6225,
+              0.6224,
               0.6079,
               0.5956,
               0.5842,
-              0.5749,
-              0.566,
-              0.5563,
-              0.5493,
-              0.5416,
-              0.5332
+              0.5748,
+              0.5659,
+              0.5562,
+              0.5492,
+              0.5415,
+              0.5331
             ],
             "fit_curve": [
               1.0,
@@ -1381,7 +1381,7 @@
               0.4182,
               0.4055,
               0.3933,
-              0.3813,
+              0.3814,
               0.3698,
               0.3585,
               0.3476,
@@ -1400,13 +1400,13 @@
               0.2316
             ],
             "n_points": 63,
-            "model_note": "S2 beats EXP (delta=-7.8)"
+            "model_note": "S2 beats EXP (delta=-7.9)"
           }
         },
         {
           "name": "DAX",
           "symbol": "^GDAXI",
-          "current": 26212.92,
+          "current": 26248.15,
           "n": 254,
           "sparkline": [
             22,
@@ -1458,98 +1458,98 @@
             83,
             82,
             90,
-            87
+            89
           ],
           "dream": {
-            "D": 1.4861,
+            "D": 1.4859,
             "lambda_q": 16.2,
             "r2": 0.9785,
             "regime": "EXTRACTION",
             "verdict": "S2_WINS",
-            "delta_aicc": -38.2,
+            "delta_aicc": -38.24,
             "best_alt": "EXP",
             "model_aicc": {
-              "S2": -381.6,
-              "EXP": -343.4,
+              "S2": -381.8,
+              "EXP": -343.5,
               "POWER": -156.9
             },
             "retention_curve": [
               1.0,
-              0.9482,
-              0.9018,
-              0.8624,
-              0.821,
-              0.785,
-              0.7397,
-              0.6973,
+              0.9479,
+              0.9015,
+              0.8622,
+              0.8207,
+              0.7848,
+              0.7395,
+              0.6972,
               0.6549,
-              0.6158,
+              0.6157,
               0.5799,
               0.5421,
               0.5048,
               0.466,
               0.4275,
-              0.3882,
-              0.3487,
-              0.3167,
+              0.3883,
+              0.3488,
+              0.3168,
               0.2922,
               0.2694,
               0.2402,
               0.2183,
-              0.2017,
+              0.2018,
               0.186,
               0.1666,
               0.1603,
               0.1509,
               0.1468,
               0.1391,
-              0.1296
+              0.1297
             ],
             "fit_curve": [
               1.0,
               0.9776,
               0.9386,
               0.8907,
-              0.8373,
+              0.8374,
               0.7809,
-              0.723,
-              0.6651,
-              0.6081,
-              0.5529,
-              0.5001,
-              0.4501,
-              0.4031,
-              0.3594,
-              0.319,
-              0.282,
-              0.2483,
-              0.2177,
-              0.1902,
-              0.1655,
-              0.1435,
-              0.124,
-              0.1068,
-              0.0917,
-              0.0785,
-              0.0669,
-              0.0569,
-              0.0482,
-              0.0407,
-              0.0343,
-              0.0288,
+              0.7231,
+              0.6652,
+              0.6082,
+              0.5531,
+              0.5002,
+              0.4502,
+              0.4032,
+              0.3595,
+              0.3192,
+              0.2822,
+              0.2484,
+              0.2179,
+              0.1903,
+              0.1657,
+              0.1437,
+              0.1242,
+              0.1069,
+              0.0918,
+              0.0786,
+              0.067,
+              0.057,
+              0.0483,
+              0.0408,
+              0.0344,
+              0.0289,
               0.0242,
               0.0202,
-              0.0168,
+              0.0169,
               0.014,
               0.0116,
               0.0096,
               0.0079,
               0.0065,
               0.0053,
-              0.0043,
-              0.0035,
+              0.0044,
+              0.0036,
               0.0029,
-              0.0023,
+              0.0024,
               0.0019,
               0.0015,
               0.0012,
@@ -1722,7 +1722,7 @@
         {
           "name": "Hang Seng",
           "symbol": "^HSI",
-          "current": 25656.49,
+          "current": 25652.97,
           "n": 246,
           "sparkline": [
             55,
@@ -1777,12 +1777,12 @@
             89
           ],
           "dream": {
-            "D": 1.956,
+            "D": 1.9559,
             "lambda_q": 16.08,
             "r2": 0.9467,
             "regime": "EXTRACTION",
             "verdict": "S2_WINS",
-            "delta_aicc": -28.15,
+            "delta_aicc": -28.14,
             "best_alt": "EXP",
             "model_aicc": {
               "S2": -320.0,
@@ -1796,7 +1796,7 @@
               0.8443,
               0.8016,
               0.7649,
-              0.7216,
+              0.7217,
               0.6826,
               0.6554,
               0.6217,
@@ -1812,13 +1812,13 @@
               0.2415,
               0.203,
               0.166,
-              0.1372,
+              0.1373,
               0.1082,
-              0.0937,
+              0.0938,
               0.0732,
               0.061,
               0.0423,
-              0.0157,
+              0.0158,
               -0.0001
             ],
             "fit_curve": [
@@ -1826,7 +1826,7 @@
               0.9935,
               0.9751,
               0.9458,
-              0.9069,
+              0.9068,
               0.8596,
               0.8056,
               0.7466,
@@ -1843,7 +1843,7 @@
               0.1567,
               0.1275,
               0.1026,
-              0.0816,
+              0.0817,
               0.0643,
               0.0501,
               0.0387,
@@ -1880,7 +1880,7 @@
         {
           "name": "Crude Oil",
           "symbol": "CL=F",
-          "current": 80.16,
+          "current": 79.72,
           "n": 252,
           "sparkline": [
             32,
@@ -1932,19 +1932,19 @@
             78,
             70,
             58,
-            49
+            47
           ],
           "dream": {
-            "D": 1.8496,
+            "D": 1.85,
             "lambda_q": 40.1,
             "r2": 0.9866,
             "regime": "EXTRACTION",
             "verdict": "S2_WINS",
-            "delta_aicc": -92.02,
+            "delta_aicc": -91.94,
             "best_alt": "EXP",
             "model_aicc": {
-              "S2": -423.3,
-              "EXP": -331.3,
+              "S2": -423.2,
+              "EXP": -331.2,
               "POWER": -166.2
             },
             "retention_curve": [
@@ -1956,22 +1956,22 @@
               0.9143,
               0.8927,
               0.8751,
-              0.8572,
+              0.8573,
               0.8449,
               0.8309,
               0.8208,
               0.8086,
-              0.7952,
+              0.7953,
               0.7806,
               0.7684,
               0.7553,
               0.7367,
               0.7192,
               0.7014,
-              0.6859,
+              0.6858,
               0.6652,
               0.6439,
-              0.6278,
+              0.6277,
               0.6115,
               0.5954,
               0.5815,
@@ -1988,29 +1988,29 @@
               0.9677,
               0.955,
               0.9406,
-              0.9246,
-              0.9071,
-              0.8883,
+              0.9247,
+              0.9072,
+              0.8884,
               0.8683,
-              0.8471,
+              0.8472,
               0.825,
               0.802,
               0.7783,
-              0.7539,
+              0.754,
               0.7291,
-              0.7038,
+              0.7039,
               0.6783,
               0.6526,
-              0.6268,
-              0.601,
+              0.6269,
+              0.6011,
               0.5754,
-              0.5499,
-              0.5247,
+              0.55,
+              0.5248,
               0.4999,
-              0.4754,
+              0.4755,
               0.4515,
               0.428,
-              0.4051,
+              0.4052,
               0.3829,
               0.3613,
               0.3404,
@@ -2020,8 +2020,8 @@
               0.264,
               0.2468,
               0.2304,
-              0.2148,
-              0.1999,
+              0.2147,
+              0.1998,
               0.1857,
               0.1723,
               0.1596,
@@ -2029,16 +2029,16 @@
               0.1364,
               0.1258,
               0.1159,
-              0.1066
+              0.1065
             ],
             "n_points": 63,
-            "model_note": "S2 beats EXP (delta=-92.0)"
+            "model_note": "S2 beats EXP (delta=-91.9)"
           }
         },
         {
           "name": "Gold",
           "symbol": "GC=F",
-          "current": 4686.6,
+          "current": 4685.9,
           "n": 252,
           "sparkline": [
             49,
@@ -2088,7 +2088,7 @@
             72,
             76,
             91,
-            93,
+            94,
             93,
             100
           ],
@@ -2114,13 +2114,13 @@
               0.8652,
               0.8416,
               0.8205,
-              0.803,
+              0.8031,
               0.7877,
-              0.7715,
+              0.7716,
               0.7516,
               0.7297,
               0.7041,
-              0.6815,
+              0.6816,
               0.6617,
               0.6433,
               0.6234,
@@ -2152,13 +2152,13 @@
               0.7867,
               0.7572,
               0.7272,
-              0.6967,
+              0.6968,
               0.6661,
               0.6355,
               0.605,
               0.5748,
-              0.5449,
-              0.5156,
+              0.545,
+              0.5157,
               0.487,
               0.459,
               0.4318,
@@ -2196,7 +2196,7 @@
         {
           "name": "Natural Gas",
           "symbol": "NG=F",
-          "current": 2.86,
+          "current": 2.85,
           "n": 252,
           "sparkline": [
             85,
@@ -2248,7 +2248,7 @@
             19,
             20,
             18,
-            31
+            30
           ],
           "dream": {
             "D": 0.9751,
@@ -2277,7 +2277,7 @@
               0.461,
               0.4477,
               0.4396,
-              0.429,
+              0.4291,
               0.4233,
               0.4207,
               0.421,
@@ -2286,22 +2286,22 @@
               0.4078,
               0.392,
               0.3595,
-              0.3317,
+              0.3318,
               0.3067,
               0.2762,
               0.2612,
-              0.2467,
+              0.2468,
               0.2435,
-              0.2374,
+              0.2375,
               0.2464
             ],
             "fit_curve": [
               1.0,
               0.9321,
-              0.8709,
+              0.871,
               0.8145,
-              0.7621,
-              0.7134,
+              0.7622,
+              0.7135,
               0.6681,
               0.6258,
               0.5863,
@@ -2312,21 +2312,21 @@
               0.4243,
               0.3979,
               0.3732,
-              0.35,
+              0.3501,
               0.3284,
               0.3081,
-              0.289,
+              0.2891,
               0.2712,
               0.2545,
-              0.2388,
+              0.2389,
               0.2242,
               0.2104,
               0.1975,
               0.1854,
-              0.174,
+              0.1741,
               0.1634,
               0.1534,
-              0.144,
+              0.1441,
               0.1353,
               0.127,
               0.1193,
@@ -2354,7 +2354,7 @@
         {
           "name": "Silver",
           "symbol": "SI=F",
-          "current": 68.81,
+          "current": 68.65,
           "n": 252,
           "sparkline": [
             95,
@@ -2406,52 +2406,52 @@
             92,
             85,
             86,
-            87
+            86
           ],
           "dream": {
-            "D": 1.9645,
-            "lambda_q": 32.93,
+            "D": 1.9647,
+            "lambda_q": 32.94,
             "r2": 0.9836,
             "regime": "EXTRACTION",
             "verdict": "S2_WINS",
             "delta_aicc": -85.37,
             "best_alt": "EXP",
             "model_aicc": {
-              "S2": -399.3,
+              "S2": -399.2,
               "EXP": -313.9,
               "POWER": -155.1
             },
             "retention_curve": [
               1.0,
               0.9664,
-              0.9385,
+              0.9386,
               0.9142,
               0.8867,
               0.8603,
               0.8405,
-              0.8239,
+              0.824,
               0.8034,
               0.7907,
               0.7691,
-              0.7468,
+              0.7469,
               0.7252,
-              0.7018,
+              0.7019,
               0.6804,
-              0.6633,
+              0.6634,
               0.6509,
               0.6333,
               0.62,
               0.6104,
               0.6018,
-              0.5866,
+              0.5867,
               0.5705,
               0.5545,
               0.5364,
-              0.5177,
-              0.4982,
+              0.5178,
+              0.4983,
               0.4824,
               0.4643,
-              0.447
+              0.4471
             ],
             "fit_curve": [
               1.0,
@@ -2463,28 +2463,28 @@
               0.9456,
               0.927,
               0.9062,
-              0.8832,
+              0.8833,
               0.8584,
               0.8318,
-              0.8037,
+              0.8038,
               0.7744,
               0.744,
-              0.7127,
-              0.6808,
+              0.7128,
+              0.6809,
               0.6485,
               0.616,
-              0.5834,
-              0.551,
+              0.5835,
+              0.5511,
               0.519,
               0.4874,
-              0.4564,
+              0.4565,
               0.4263,
               0.397,
               0.3687,
               0.3414,
               0.3153,
               0.2904,
-              0.2666,
+              0.2667,
               0.2442,
               0.223,
               0.2031,
@@ -2602,52 +2602,52 @@
         100,
         98,
         94,
-        96
+        97
       ],
       "dream": {
-        "D": 2.1014,
+        "D": 2.1016,
         "lambda_q": 16.36,
-        "r2": 0.9563,
+        "r2": 0.9562,
         "regime": "EXTRACTION",
         "verdict": "S2_WINS",
-        "delta_aicc": -45.56,
+        "delta_aicc": -45.5,
         "best_alt": "EXP",
         "model_aicc": {
-          "S2": -340.6,
-          "EXP": -295.1,
+          "S2": -340.5,
+          "EXP": -295.0,
           "POWER": -153.0
         },
         "retention_curve": [
           1.0,
           0.9483,
           0.8957,
-          0.8465,
+          0.8464,
           0.7985,
-          0.7568,
-          0.7086,
+          0.7567,
+          0.7085,
           0.6737,
-          0.657,
-          0.628,
-          0.5976,
-          0.5713,
-          0.5297,
-          0.4922,
-          0.4511,
-          0.4134,
-          0.3791,
-          0.3395,
-          0.3013,
-          0.2631,
-          0.2302,
-          0.195,
-          0.1563,
-          0.118,
-          0.0889,
-          0.055,
-          0.0261,
-          0.0074,
-          -0.0053,
-          -0.0141
+          0.6569,
+          0.6279,
+          0.5975,
+          0.5712,
+          0.5296,
+          0.4921,
+          0.451,
+          0.4133,
+          0.379,
+          0.3394,
+          0.3012,
+          0.263,
+          0.23,
+          0.1948,
+          0.1561,
+          0.1178,
+          0.0887,
+          0.0549,
+          0.026,
+          0.0072,
+          -0.0054,
+          -0.0142
         ],
         "fit_curve": [
           1.0,
@@ -2658,25 +2658,25 @@
           0.8649,
           0.8082,
           0.745,
-          0.6773,
-          0.6071,
-          0.5364,
-          0.4672,
-          0.4011,
-          0.3393,
-          0.2828,
-          0.2322,
-          0.1878,
-          0.1497,
-          0.1174,
-          0.0908,
-          0.0691,
-          0.0518,
-          0.0382,
+          0.6772,
+          0.607,
+          0.5363,
+          0.4671,
+          0.4009,
+          0.3391,
+          0.2826,
+          0.2321,
+          0.1877,
+          0.1495,
+          0.1173,
+          0.0907,
+          0.069,
+          0.0517,
+          0.0381,
           0.0277,
           0.0198,
-          0.014,
-          0.0097,
+          0.0139,
+          0.0096,
           0.0066,
           0.0044,
           0.0029,
@@ -2702,175 +2702,175 @@
           0.0
         ],
         "n_points": 65,
-        "model_note": "S2 beats EXP (delta=-45.6)"
+        "model_note": "S2 beats EXP (delta=-45.5)"
       },
-      "current": 1.1674
+      "current": 1.1677
     },
     "flights": {
       "name": "Flights",
       "category": "aviation",
       "status": "ok",
-      "count": 6880,
+      "count": 7432,
       "bands": {
-        "N Hemisphere": 5705,
-        "S Hemisphere": 364,
-        "Tropics": 722
+        "N Hemisphere": 6273,
+        "S Hemisphere": 360,
+        "Tropics": 701
       },
       "top_origins": [
         [
           "United States",
-          850
+          1001
         ],
         [
           "United Kingdom",
-          531
+          545
         ],
         [
           "Germany",
-          351
-        ],
-        [
-          "Ireland",
-          337
+          429
         ],
         [
           "China",
-          320
+          355
+        ],
+        [
+          "Ireland",
+          332
         ],
         [
           "Turkey",
-          300
-        ],
-        [
-          "Malta",
-          288
+          318
         ],
         [
           "France",
-          286
+          309
+        ],
+        [
+          "Malta",
+          274
         ],
         [
           "Australia",
-          284
+          233
         ],
         [
           "Spain",
-          215
+          208
         ]
       ],
       "sparkline": [
-        0,
-        5,
-        47,
-        0,
-        5,
-        16,
-        46,
-        1,
-        3,
-        90,
-        72,
-        65,
-        28,
-        93,
-        60,
-        85,
-        92,
-        80,
-        88,
-        85,
-        6,
-        52,
-        58,
-        83,
-        63,
-        100,
-        20,
-        65,
-        80,
-        90,
-        53,
-        78,
-        75,
-        29,
-        54,
-        93,
+        70,
         95,
-        21,
-        35,
-        78,
+        84,
+        29,
+        87,
+        71,
+        77,
+        4,
+        80,
+        0,
+        72,
+        82,
+        90,
+        6,
         80,
         85,
-        88,
-        73,
-        21,
-        15,
         85,
+        80,
+        1,
+        44,
+        95,
+        90,
+        29,
+        15,
+        76,
+        2,
+        29,
+        49,
+        74,
+        47,
         11,
-        8,
-        98
+        59,
+        85,
+        90,
+        10,
+        92,
+        11,
+        35,
+        77,
+        85,
+        82,
+        44,
+        25,
+        2,
+        72,
+        4,
+        6,
+        100,
+        92,
+        100
       ],
       "dream": {
-        "D": 0.2276,
-        "lambda_q": 0.01,
-        "r2": 0.9867,
+        "D": 0.1894,
+        "lambda_q": 0.0,
+        "r2": 0.9832,
         "regime": "NATURAL",
-        "verdict": "S2_WINS",
-        "delta_aicc": -13.96,
+        "verdict": "S2_TIES",
+        "delta_aicc": 1.97,
         "best_alt": "POWER",
         "model_aicc": {
-          "S2": -886.0,
-          "EXP": -863.6,
-          "POWER": -872.1
+          "S2": -862.8,
+          "EXP": -855.0,
+          "POWER": -864.8
         },
         "retention_curve": [
           1.0,
-          0.0399,
-          0.0298,
-          0.0228,
-          0.0231,
-          0.0253,
-          0.018,
-          -0.0008,
-          -0.0051,
-          0.0003,
-          0.0059,
-          -0.0192,
-          -0.0142,
-          -0.0037,
-          -0.0043,
-          -0.0204,
-          -0.0032,
-          -0.0077,
-          0.0161,
-          0.0074,
-          0.0122,
-          0.0069,
-          0.0333,
-          0.0325,
+          0.0258,
+          0.0194,
           0.0091,
-          0.0173,
-          0.0234,
-          0.0045,
-          0.0056,
-          -0.0046
+          0.0068,
+          0.0189,
+          -0.0101,
+          0.0144,
+          0.0263,
+          0.0098,
+          -0.0077,
+          0.0001,
+          0.0163,
+          0.001,
+          0.0083,
+          0.0186,
+          -0.0063,
+          -0.0016,
+          -0.0055,
+          -0.0118,
+          -0.002,
+          -0.0054,
+          -0.0104,
+          0.0139,
+          0.0169,
+          -0.0215,
+          -0.0156,
+          0.0172,
+          0.005,
+          0.0012
         ],
         "fit_curve": [
-          0.87,
-          0.0226,
-          0.0118,
-          0.0077,
+          0.7632,
+          0.0146,
+          0.0081,
           0.0055,
-          0.0042,
-          0.0033,
-          0.0027,
-          0.0023,
+          0.0041,
+          0.0032,
+          0.0026,
+          0.0022,
           0.0019,
-          0.0017,
+          0.0016,
           0.0014,
           0.0013,
-          0.0011,
+          0.0012,
           0.001,
+          0.0009,
           0.0009,
           0.0008,
           0.0007,
@@ -2879,15 +2879,19 @@
           0.0006,
           0.0005,
           0.0005,
+          0.0005,
           0.0004,
           0.0004,
           0.0004,
           0.0004,
+          0.0004,
           0.0003,
           0.0003,
           0.0003,
           0.0003,
           0.0003,
+          0.0003,
+          0.0003,
           0.0002,
           0.0002,
           0.0002,
@@ -2897,18 +2901,14 @@
           0.0002,
           0.0002,
           0.0002,
-          0.0001,
-          0.0001,
-          0.0001,
-          0.0001,
-          0.0001,
-          0.0001,
-          0.0001,
-          0.0001,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
           0.0001
         ],
         "n_points": 100,
-        "model_note": "S2 beats POWER (delta=-14.0)"
+        "model_note": "S2 ties POWER (delta=2.0)"
       }
     },
     "news": {
@@ -2978,6 +2978,36 @@
           "source": "BBC"
         },
         {
+          "title": "Trump’s Korean gambit exposes a shifting East Asian order",
+          "url": "https://www.aljazeera.com/opinions/2026/8/26/trumps-korean-gambit-exposes-a-shifting-east-asian-order?traffic_source=rss",
+          "date": "Wed, 26 Aug 2026 08:18:55 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Brighton & Hove Albion sign Algerian left-back Jaouen Hadjam",
+          "url": "https://www.aljazeera.com/sports/2026/8/26/brighton-hove-albion-sign-algerian-left-back-jaouen-hadjam?traffic_source=rss",
+          "date": "Wed, 26 Aug 2026 08:04:13 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "US Army Black Hawk helicopter crashes in Colorado",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/us-army-black-hawk-helicopter-crashes-in-colorado?traffic_source=rss",
+          "date": "Wed, 26 Aug 2026 07:47:42 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "UN rejects Israel’s threat to expel Gaza residents over kite-flying",
+          "url": "https://www.aljazeera.com/news/2026/8/26/un-rejects-israels-threat-to-expel-gaza-residents-over-kite-flying?traffic_source=rss",
+          "date": "Wed, 26 Aug 2026 07:43:36 +0000",
+          "source": "Al Jazeera"
+        },
+        {
+          "title": "Palestinian boy shot during Israeli raid on UNRWA centre",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/palestinian-boy-shot-during-israeli-raid-on-unrwa-centre?traffic_source=rss",
+          "date": "Wed, 26 Aug 2026 07:41:02 +0000",
+          "source": "Al Jazeera"
+        },
+        {
           "title": "The RSF’s defeat will not end Sudan’s war but merely fragment it",
           "url": "https://www.aljazeera.com/opinions/2026/8/26/the-rsfs-defeat-will-not-end-sudans-war-but-merely-fragment-it?traffic_source=rss",
           "date": "Wed, 26 Aug 2026 07:26:45 +0000",
@@ -3002,39 +3032,9 @@
           "source": "Al Jazeera"
         },
         {
-          "title": "Top official says Iran, Oman have agreed new temporary route in Hormuz",
+          "title": "Iran, Oman agree on new temporary route in Hormuz",
           "url": "https://www.aljazeera.com/economy/2026/8/26/top-official-says-iran-oman-have-agreed-new-temporary-hormuz-route?traffic_source=rss",
           "date": "Wed, 26 Aug 2026 06:02:13 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Iran bets economic pain will pressure Trump in game of ‘chicken’",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/iran-bets-economic-pain-will-pressure-trump-in-game-of?traffic_source=rss",
-          "date": "Wed, 26 Aug 2026 05:20:17 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Fireworks factory goes up in smoke in Mexico",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/fireworks-factory-goes-up-in-smoke-in-mexico?traffic_source=rss",
-          "date": "Wed, 26 Aug 2026 05:17:40 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Massive natural gas leak in Wisconsin puts community on alert",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/massive-natural-gas-leak-in-wisconsin-puts-community-on-alert?traffic_source=rss",
-          "date": "Wed, 26 Aug 2026 05:15:51 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "Russia’s ‘Amazon’ Wildberries comes under Ukraine attack again",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/russias-amazon-wildberries-comes-under-ukraine-attack-again?traffic_source=rss",
-          "date": "Wed, 26 Aug 2026 04:54:38 +0000",
-          "source": "Al Jazeera"
-        },
-        {
-          "title": "At least 14 newborn babies killed in Pakistan hospital nursery fire",
-          "url": "https://www.aljazeera.com/news/2026/8/26/at-least-15-newborns-killed-in-pakistan-hospital-fire?traffic_source=rss",
-          "date": "Wed, 26 Aug 2026 04:27:15 +0000",
           "source": "Al Jazeera"
         }
       ]
@@ -3046,9 +3046,9 @@
       "cities": [
         {
           "city": "New York",
-          "temp": 18,
-          "wind": 7,
-          "humidity": 85,
+          "temp": 17,
+          "wind": 8,
+          "humidity": 87,
           "precip": 0.0,
           "lat": 40.71,
           "lon": -74.01
@@ -3056,17 +3056,17 @@
         {
           "city": "London",
           "temp": 19,
-          "wind": 9,
+          "wind": 11,
           "humidity": 88,
-          "precip": 0.1,
+          "precip": 0.0,
           "lat": 51.51,
           "lon": -0.13
         },
         {
           "city": "Tokyo",
-          "temp": 32,
-          "wind": 6,
-          "humidity": 68,
+          "temp": 31,
+          "wind": 5,
+          "humidity": 71,
           "precip": 0.0,
           "lat": 35.68,
           "lon": 139.69
@@ -3092,9 +3092,9 @@
         {
           "city": "Mumbai",
           "temp": 29,
-          "wind": 15,
-          "humidity": 75,
-          "precip": 0.0,
+          "wind": 16,
+          "humidity": 72,
+          "precip": 0.2,
           "lat": 19.08,
           "lon": 72.88
         },
@@ -3102,7 +3102,7 @@
           "city": "Sao Paulo",
           "temp": 15,
           "wind": 4,
-          "humidity": 97,
+          "humidity": 98,
           "precip": 0.0,
           "lat": -23.55,
           "lon": -46.63
@@ -3110,82 +3110,82 @@
         {
           "city": "Sydney",
           "temp": 16,
-          "wind": 14,
+          "wind": 12,
           "humidity": 79,
           "precip": 0.0,
           "lat": -33.87,
           "lon": 151.21
         },
         {
-          "city": "Cairo",
-          "temp": 30,
-          "wind": 8,
-          "humidity": 62,
-          "precip": 0.0,
-          "lat": 30.04,
-          "lon": 31.24
-        },
-        {
           "city": "Lagos",
           "temp": 27,
           "wind": 7,
-          "humidity": 85,
+          "humidity": 81,
           "precip": 0.0,
           "lat": 6.52,
           "lon": 3.38
         },
         {
+          "city": "Dubai",
+          "temp": 41,
+          "wind": 14,
+          "humidity": 35,
+          "precip": 0.0,
+          "lat": 25.2,
+          "lon": 55.27
+        },
+        {
           "city": "Singapore",
-          "temp": 31,
-          "wind": 10,
-          "humidity": 63,
+          "temp": 30,
+          "wind": 11,
+          "humidity": 66,
           "precip": 0.1,
           "lat": 1.35,
           "lon": 103.82
         },
         {
           "city": "Berlin",
-          "temp": 18,
+          "temp": 19,
           "wind": 13,
-          "humidity": 62,
+          "humidity": 58,
           "precip": 0.0,
           "lat": 52.52,
           "lon": 13.4
         },
         {
           "city": "Paris",
-          "temp": 21,
-          "wind": 4,
-          "humidity": 74,
+          "temp": 23,
+          "wind": 5,
+          "humidity": 67,
           "precip": 0.0,
           "lat": 48.85,
           "lon": 2.35
         },
         {
           "city": "Istanbul",
-          "temp": 26,
-          "wind": 6,
-          "humidity": 67,
+          "temp": 28,
+          "wind": 5,
+          "humidity": 62,
           "precip": 0.0,
           "lat": 41.01,
           "lon": 28.98
         }
       ],
       "sparkline": [
-        18,
-        24,
+        8,
+        15,
+        62,
+        0,
+        46,
+        54,
+        0,
+        4,
+        46,
         100,
-        0,
-        71,
-        82,
-        0,
-        6,
-        88,
-        71,
-        94,
-        18,
-        35,
-        65
+        58,
+        15,
+        31,
+        50
       ],
       "dream": {
         "D": 1.425,
@@ -3304,14 +3304,14 @@
           "date": "2026-08-25T20:43:55+00:00"
         },
         {
-          "title": "US Again Declines to Join UN Statement Condemning Russia’s Strikes on Ukraine",
-          "url": "https://www.reddit.com/r/worldnews/comments/1vxuyrg/us_again_declines_to_join_un_statement_condemning/",
-          "date": "2026-08-25T09:32:06+00:00"
-        },
-        {
           "title": "'Sounds like me': Trump confesses to CNN that he torpedoed trade talks with Canada",
           "url": "https://www.reddit.com/r/worldnews/comments/1vyhaj0/sounds_like_me_trump_confesses_to_cnn_that_he/",
           "date": "2026-08-26T00:16:16+00:00"
+        },
+        {
+          "title": "US Again Declines to Join UN Statement Condemning Russia’s Strikes on Ukraine",
+          "url": "https://www.reddit.com/r/worldnews/comments/1vxuyrg/us_again_declines_to_join_un_statement_condemning/",
+          "date": "2026-08-25T09:32:06+00:00"
         },
         {
           "title": "Mark Carney says Canada can’t accept US trade deal that would weaken French language after American ",
@@ -3359,14 +3359,14 @@
           "date": "2026-08-25T22:24:43+00:00"
         },
         {
+          "title": "Rubio tells allies U.S. shifting from strikes to sanctions on Iran",
+          "url": "https://www.reddit.com/r/worldnews/comments/1vykt3b/rubio_tells_allies_us_shifting_from_strikes_to/",
+          "date": "2026-08-26T02:53:36+00:00"
+        },
+        {
           "title": "US removes Syria from list of state sponsors of terrorism",
           "url": "https://www.reddit.com/r/worldnews/comments/1vy5d52/us_removes_syria_from_list_of_state_sponsors_of/",
           "date": "2026-08-25T16:52:23+00:00"
-        },
-        {
-          "title": "‘We need to be prepared’: Finland sounds alarm over rising Russian sabotage threat",
-          "url": "https://www.reddit.com/r/worldnews/comments/1vxtks1/we_need_to_be_prepared_finland_sounds_alarm_over/",
-          "date": "2026-08-25T08:09:05+00:00"
         }
       ]
     },
@@ -3377,147 +3377,147 @@
       "count": 30,
       "edits": [
         {
-          "title": "Template:Sports governing bodies in the Philippines",
-          "user": "Exec8",
-          "time": "2026-08-26T07:49:59Z",
-          "size": 4455
+          "title": "Oregon Steel Mills",
+          "user": "Zeibgeist",
+          "time": "2026-08-26T08:47:58Z",
+          "size": 9607
         },
         {
-          "title": "Mozart in Mirrorshades",
-          "user": "Rodw",
-          "time": "2026-08-26T07:49:57Z",
-          "size": 7722
+          "title": "Makurdi Airport",
+          "user": "CutlassBot",
+          "time": "2026-08-26T08:47:56Z",
+          "size": 2837
         },
         {
-          "title": "Talk:Jehovah's Witnesses publications",
-          "user": "Jeffro77",
-          "time": "2026-08-26T07:49:57Z",
-          "size": 29017
+          "title": "Italy national under-19 football team",
+          "user": "~2026-46401-84",
+          "time": "2026-08-26T08:47:53Z",
+          "size": 11909
         },
         {
-          "title": "Will Trotter",
-          "user": "Meena",
-          "time": "2026-08-26T07:49:56Z",
-          "size": 16579
+          "title": "Preston Football Club",
+          "user": "Totallynotarandomalt69",
+          "time": "2026-08-26T08:47:52Z",
+          "size": 131877
         },
         {
-          "title": "Air Canada Express",
-          "user": "Robertogamerxxx",
-          "time": "2026-08-26T07:49:56Z",
-          "size": 11203
+          "title": "Draft:Danny Mann",
+          "user": "Spartaz",
+          "time": "2026-08-26T08:47:52Z",
+          "size": 14881
         },
         {
-          "title": "2026 FedEx Cup Playoffs",
-          "user": "Johnsmith2116",
-          "time": "2026-08-26T07:49:54Z",
-          "size": 15689
+          "title": "India at the 2026 Asian Para Games",
+          "user": "Neeelzzz20",
+          "time": "2026-08-26T08:47:51Z",
+          "size": 22960
         },
         {
-          "title": "User:Meena/Creations",
-          "user": "Meena",
-          "time": "2026-08-26T07:49:54Z",
-          "size": 28099
+          "title": "Pradeep Shettar",
+          "user": "Dr.AyushBhardwaj",
+          "time": "2026-08-26T08:47:51Z",
+          "size": 1961
         },
         {
-          "title": "2026 in the United States",
-          "user": "Wjfox2005",
-          "time": "2026-08-26T07:49:53Z",
-          "size": 340120
+          "title": "Cartan subalgebra",
+          "user": "Mathworkofpast",
+          "time": "2026-08-26T08:47:49Z",
+          "size": 15040
         },
         {
-          "title": "Deaths in 2026",
-          "user": "Refsworldlee",
-          "time": "2026-08-26T07:49:53Z",
-          "size": 193479
+          "title": "Ballinger Cats",
+          "user": "CutlassBot",
+          "time": "2026-08-26T08:47:49Z",
+          "size": 2691
         },
         {
-          "title": "User talk:Blasted Wall",
-          "user": "Blasted Wall",
-          "time": "2026-08-26T07:49:53Z",
-          "size": 5301
+          "title": "Quarry Bay station",
+          "user": "~2026-43038-75",
+          "time": "2026-08-26T08:47:48Z",
+          "size": 11584
         },
         {
-          "title": "Horserace (disambiguation)",
-          "user": "Bot1058",
-          "time": "2026-08-26T07:49:53Z",
-          "size": 145
+          "title": "Jone (singer)",
+          "user": "Jevansen",
+          "time": "2026-08-26T08:47:48Z",
+          "size": 6981
         },
         {
-          "title": "Kitschies",
-          "user": "Rodw",
-          "time": "2026-08-26T07:49:52Z",
-          "size": 55425
+          "title": "Majuli",
+          "user": "Ananya Taye",
+          "time": "2026-08-26T08:47:47Z",
+          "size": 37595
         },
         {
-          "title": "Wikipedia:WikiProject Directory/Description/WikiProject Oriental Ortho",
+          "title": "Szolnok Air Base",
+          "user": "CutlassBot",
+          "time": "2026-08-26T08:47:46Z",
+          "size": 2590
+        },
+        {
+          "title": "Wikipedia:WikiProject Directory/Description/WikiProject Scottish Castl",
           "user": "Reports bot",
-          "time": "2026-08-26T07:49:52Z",
-          "size": 1871
+          "time": "2026-08-26T08:47:45Z",
+          "size": 564
         },
         {
-          "title": "User:Balabush/AfC log",
-          "user": "Balabush",
-          "time": "2026-08-26T07:49:52Z",
-          "size": 26246
+          "title": "Mohamed Ofkir",
+          "user": "~2026-46332-23",
+          "time": "2026-08-26T08:47:44Z",
+          "size": 7813
         },
         {
-          "title": "Sir James Somerville, 1st Baronet",
-          "user": "Spleodrach",
-          "time": "2026-08-26T07:49:52Z",
-          "size": 3822
+          "title": "Too Human",
+          "user": "~2026-46431-80",
+          "time": "2026-08-26T08:47:43Z",
+          "size": 30223
         },
         {
-          "title": "Hegumen",
-          "user": "User1373478",
-          "time": "2026-08-26T07:49:51Z",
-          "size": 3846
+          "title": "Wikipedia:WikiProject Deletion sorting/Lebanon/archive",
+          "user": "AnomieBOT",
+          "time": "2026-08-26T08:47:43Z",
+          "size": 85616
         },
         {
-          "title": "Dharmendra Singh Yadav",
-          "user": "Sebbog13",
-          "time": "2026-08-26T07:49:51Z",
-          "size": 6526
+          "title": "TDI (engine)",
+          "user": "Veznedar",
+          "time": "2026-08-26T08:47:42Z",
+          "size": 21556
         },
         {
-          "title": "IM LS8",
-          "user": "TimWu007",
-          "time": "2026-08-26T07:49:51Z",
-          "size": 3273
+          "title": "Maintenance Command",
+          "user": "SchlurcherBot",
+          "time": "2026-08-26T08:47:41Z",
+          "size": 17367
         },
         {
-          "title": "Chris Triantis",
-          "user": "Schestos",
-          "time": "2026-08-26T07:49:51Z",
-          "size": 5624
-        },
-        {
-          "title": "Draft:The Dark Web",
-          "user": "Balabush",
-          "time": "2026-08-26T07:49:51Z",
-          "size": 2311
+          "title": "Ruth Nyong Asuquo",
+          "user": "Zyxw",
+          "time": "2026-08-26T08:47:40Z",
+          "size": 4115
         }
       ],
       "sparkline": [
+        7,
+        2,
+        9,
+        100,
+        11,
+        17,
         1,
+        11,
         2,
         8,
         5,
-        3,
-        5,
-        8,
-        100,
-        57,
+        28,
         2,
         0,
+        6,
+        23,
+        65,
         16,
-        1,
-        8,
-        1,
-        1,
-        2,
-        1,
-        2,
-        1
+        13,
+        3
       ],
       "dream": null
     },
@@ -3530,74 +3530,74 @@
         {
           "title": "Apple introduces M6 and M5 Ultra",
           "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
-          "score": 1101,
-          "comments": 1050
+          "score": 1120,
+          "comments": 1076
         },
         {
           "title": "Stalking the Wily Hacker: 40 years later – Cliff Stoll [video]",
           "url": "https://www.youtube.com/watch?v=656058JxTM0",
-          "score": 63,
-          "comments": 19
+          "score": 81,
+          "comments": 23
         },
         {
           "title": "FDA authorizes first wearable device that monitors ketone and blood sugar levels",
           "url": "https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-wearable-device-continuously-monitors-both-ketone-levels-and-blood-sugar",
-          "score": 368,
-          "comments": 183
+          "score": 380,
+          "comments": 188
         },
         {
           "title": "Harvest (IBM 7950): Supercomputer for cryptanalysis at the NSA in the Cold War",
           "url": "https://spectrum.ieee.org/cold-war-codebreaker-nsa-ibm",
-          "score": 20,
-          "comments": 6
+          "score": 33,
+          "comments": 9
         },
         {
           "title": "Queryable Executables",
           "url": "https://fzakaria.com/2026/08/24/actually-queryable-executables",
-          "score": 140,
-          "comments": 23
+          "score": 171,
+          "comments": 36
         },
         {
           "title": "OpenAI Jalapeño: Better than Nvidia Blackwell",
           "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
-          "score": 449,
-          "comments": 287
+          "score": 468,
+          "comments": 302
         },
         {
           "title": "New Mac Studio with M5 Max and M5 Ultra",
           "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/",
-          "score": 756,
-          "comments": 499
-        },
-        {
-          "title": "Black hole singularity is a surface not a point",
-          "url": "https://arxiv.org/abs/2608.21590",
-          "score": 230,
-          "comments": 169
-        },
-        {
-          "title": "New Mac mini, featuring M6 and M5 Pro",
-          "url": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
-          "score": 487,
-          "comments": 297
+          "score": 766,
+          "comments": 504
         },
         {
           "title": "Maiao: Gerrit-style code review workflow for GitHub, GitLab, Gitea, others",
           "url": "https://github.com/runetes/maiao",
-          "score": 71,
-          "comments": 36
+          "score": 78,
+          "comments": 44
+        },
+        {
+          "title": "Black hole singularity is a surface not a point",
+          "url": "https://arxiv.org/abs/2608.21590",
+          "score": 237,
+          "comments": 174
         },
         {
           "title": "When str.lower() is a security vulnerability in Python",
           "url": "https://sethmlarson.dev/when-str-lower-is-a-security-vulnerability",
-          "score": 109,
-          "comments": 46
+          "score": 117,
+          "comments": 48
+        },
+        {
+          "title": "New Mac mini, featuring M6 and M5 Pro",
+          "url": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
+          "score": 491,
+          "comments": 301
         },
         {
           "title": "Agentic Context Management: Memory and Cost as Architecture Problems",
           "url": "https://arxiv.org/abs/2607.21503",
-          "score": 41,
-          "comments": 14
+          "score": 50,
+          "comments": 16
         }
       ],
       "sparkline": [
@@ -3605,13 +3605,13 @@
         4,
         32,
         0,
-        11,
+        13,
         40,
-        68,
+        67,
+        4,
         19,
-        43,
-        5,
         8,
+        42,
         2
       ],
       "dream": null
@@ -3624,70 +3624,70 @@
       "repos": [
         {
           "name": "codecrafters-io/build-your-own-x",
-          "stars": 543043,
+          "stars": 543051,
           "lang": "Markdown",
           "desc": "Master programming by recreating your favorite technologies from scratch.",
           "url": "https://github.com/codecrafters-io/build-your-own-x"
         },
         {
           "name": "sindresorhus/awesome",
-          "stars": 500019,
+          "stars": 500032,
           "lang": null,
           "desc": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are t",
           "url": "https://github.com/sindresorhus/awesome"
         },
         {
           "name": "public-apis/public-apis",
-          "stars": 470635,
+          "stars": 470664,
           "lang": "Python",
           "desc": "A collective list of free APIs",
           "url": "https://github.com/public-apis/public-apis"
         },
         {
           "name": "freeCodeCamp/freeCodeCamp",
-          "stars": 454619,
+          "stars": 454622,
           "lang": "TypeScript",
           "desc": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming,",
           "url": "https://github.com/freeCodeCamp/freeCodeCamp"
         },
         {
           "name": "EbookFoundation/free-programming-books",
-          "stars": 395240,
+          "stars": 395242,
           "lang": "Python",
           "desc": ":books: Freely available programming books",
           "url": "https://github.com/EbookFoundation/free-programming-books"
         },
         {
           "name": "openclaw/openclaw",
-          "stars": 387663,
+          "stars": 387674,
           "lang": "TypeScript",
           "desc": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
           "url": "https://github.com/openclaw/openclaw"
         },
         {
           "name": "donnemartin/system-design-primer",
-          "stars": 366083,
+          "stars": 366096,
           "lang": "Python",
           "desc": "Learn how to design large-scale systems. Prep for the system design interview.  ",
           "url": "https://github.com/donnemartin/system-design-primer"
         },
         {
           "name": "nilbuild/developer-roadmap",
-          "stars": 365421,
+          "stars": 365423,
           "lang": "TypeScript",
           "desc": "Interactive roadmaps, guides and other educational content to help developers gr",
           "url": "https://github.com/nilbuild/developer-roadmap"
         },
         {
           "name": "jwasham/coding-interview-university",
-          "stars": 359741,
+          "stars": 359746,
           "lang": null,
           "desc": "A complete computer science study plan to become a software engineer.",
           "url": "https://github.com/jwasham/coding-interview-university"
         },
         {
           "name": "vinta/awesome-python",
-          "stars": 316122,
+          "stars": 316128,
           "lang": "Python",
           "desc": "The definitive list that answers \"I want to do X in Python, which tool should I ",
           "url": "https://github.com/vinta/awesome-python"
